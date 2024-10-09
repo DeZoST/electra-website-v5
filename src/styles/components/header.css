@@ -1,0 +1,100 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.logo {
+    transition: transform 0.2s ease;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.menu-toggle {
+    border: none;
+    background: none;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.menu-toggle img {
+    height: 2rem;
+}
+
+.logo img {
+    height: 0.8rem;
+}
+
+.logo:hover,
+.menu-toggle:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.nav__links {
+    display: none;
+}
+
+.nav__link {
+    opacity: 0;
+    transform: translateX(-10px); /* Move the element to the right */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-menu:hover .nav__link {
+    opacity: 1;
+    transform: translateX(0);
+    animation: fadeIn 0.2s ease;
+}
+
+/* Reverse the animation on hover out */
+.nav-menu:not(:hover) .nav__link {
+    animation: fadeOut 0.2s forwards; /* Fade-out animation */
+}
+
+/* Apply staggered delay for fadeIn and fadeOut */
+.nav__link:nth-child(1) {
+    animation-delay: 10s;
+}
+
+.nav__link:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.nav__link:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px); /* From right to left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(10px); /* Reverse the movement */
+    }
+}

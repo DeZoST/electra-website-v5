@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/assets/images/Solo_Star_Orange.png"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Electra Filmworks is a production company specializing in commercials, music videos, and short films."
+        />
+        <meta
+            name="keywords"
+            content="Electra Filmworks, production company, commercials, music videos, short films"
+        />
+        <meta name="author" content="Electra Filmworks & Alexis De Barros" />
+        <title>Electra</title>
+        <link rel="stylesheet" href="src/styles/style.css" />
+        <link rel="stylesheet" href="src/styles//components/header.css" />
+        <link rel="stylesheet" href="src/styles/components/home.css" />
+        <link
+            rel="stylesheet"
+            href="src/styles/components/featured-project.css"
+        />
+        <link rel="stylesheet" href="src/styles/components/about.css" />
+        <link rel="stylesheet" href="src/styles/components/team.css" />
+        <link rel="stylesheet" href="src/styles/components/reps.css" />
+        <link rel="stylesheet" href="src/styles/components/footer.css" />
+        <link rel="stylesheet" href="src/styles/components/modal.css" />
+        <link rel="stylesheet" href="src/styles/components/mobile_menu.css" />
+        <link rel="stylesheet" href="src/styles/modern-normalize.css" />
+        <link rel="stylesheet" href="src/styles/utils.css" />
+
+        <script type="module" src="src/main.js" defer></script>
+        <script
+            type="module"
+            src="https://cdn.lordicon.com/lordicon.js"
+            defer
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@mux/mux-player"
+            defer
+        ></script>
+    </head>
+    <body style="visibility: hidden">
+        <header class="header">
+            <a href="#home" class="logo">
+                <img
+                    src="assets/images/Electra_Orange.png"
+                    alt="Electra Logo"
+                    loading="lazy"
+                />
+            </a>
+            <nav class="nav-menu">
+                <ul class="nav__links">
+                    <li class="nav__link"><a href="#about">Directors</a></li>
+                    <li class="nav__link"><a href="#about">About</a></li>
+                    <li class="nav__link"><a href="#reps">Contact</a></li>
+                </ul>
+                <button
+                    id="menu-toggle"
+                    aria-label="Open main menu"
+                    class="menu-toggle"
+                >
+                    <img
+                        src="assets/images/Bolt_Star_Orange.png"
+                        alt="Main Navigation Menu"
+                        loading="lazy"
+                    />
+                </button>
+            </nav>
+        </header>
+        <div id="mobileMenu" class="mobile-menu">
+            <ul class="mobile-menu__links">
+                <li class="mobile-menu__link">
+                    <a href="#about">Directors</a>
+                </li>
+                <li class="mobile-menu__link"><a href="#contact">About</a></li>
+                <li class="mobile-menu__link">
+                    <a href="#services">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <main>
+            <div class="director-video-overlay">
+                <!-- Mux player will be dynamically created here -->
+            </div>
+
+            <section id="home" class="home section container">
+                <nav class="home__container">
+                    <h1 class="home__title">Directors</h1>
+                    <ul class="home__directors">
+                        <li class="home__director">
+                            <a href=""> Lorenzo De Guia </a>
+                        </li>
+                        <li class="home__director">
+                            <a href=""> Anthony Garth </a>
+                        </li>
+                        <li class="home__director">
+                            <a href=""> Kailee McGee </a>
+                        </li>
+                        <li class="home__director">
+                            <a href=""> Ben Weinstein </a>
+                        </li>
+                        <li class="home__director">
+                            <a href=""> Ze'ev Waismann </a>
+                        </li>
+                    </ul>
+                </nav>
+                <lord-icon
+                    class="scroll-down-line"
+                    src="https://cdn.lordicon.com/ksmzzfxc.json"
+                    trigger="loop"
+                    stroke="bold"
+                    state="loop-slide"
+                    colors="primary:#ff4e00,secondary:#ef9622"
+                ></lord-icon>
+            </section>
+            <section
+                id="featured-work-01"
+                class="featured__project section container"
+            >
+                <div class="featured__project__container">
+                    <h4 class="featured__project__text">Featured Projects</h4>
+
+                    <div class="featured__project__wrapper">
+                        <div
+                            class="featured__project__video"
+                            data-playback-id="XdvyCtxC01GgLyKOlSNmhitkhmZgk9L402S6DQPf7bonY"
+                        >
+                            <img
+                                class="featured__project__thumbnail"
+                                src="/assets/images/Ford_Bronco_DUST_IS_GOLD_thumbnail.png"
+                                alt="Ford Bronco DUST IS GOLD thumbnail"
+                                loading="lazy"
+                                aria-label="Ford Bronco DUST IS GOLD thumbnail"
+                            />
+                            <img
+                                class="featured__project__gif lazy-gif"
+                                src=""
+                                data-gif="https://image.mux.com/XdvyCtxC01GgLyKOlSNmhitkhmZgk9L402S6DQPf7bonY/animated.webp?start=13&end=20&fps=15&width=640"
+                                loading="lazy"
+                                aria-label="Ford Bronco DUST IS GOLD animated preview"
+                            />
+                        </div>
+                        <div class="featured__project__details__container">
+                            <img
+                                src="/assets/images/Solo_Star_Orange.png"
+                                alt="Solo Star Orange"
+                                loading="eager"
+                                aria-label="Solo Star Orange"
+                                class="featured__project__svg"
+                            />
+                            <div class="featured__project__details">
+                                <h2 class="featured__project__name">
+                                    Ze'ev Waismann
+                                </h2>
+                                <h4 class="featured__project__type">
+                                    Commercial
+                                </h4>
+                            </div>
+                            <div class="featured__project__details">
+                                <h3 class="featured__project__company">Ford</h3>
+                                <h3 class="featured__project__title">
+                                    Dust is Gold
+                                </h3>
+                            </div>
+                            <a class="featured__project__link" href="#home"
+                                >More from Ze'ev</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <lord-icon
+                    class="scroll-down-line"
+                    src="https://cdn.lordicon.com/ksmzzfxc.json"
+                    trigger="loop"
+                    stroke="bold"
+                    state="loop-slide"
+                    colors="primary:#ff4e00,secondary:#ef9622"
+                ></lord-icon>
+            </section>
+            <section
+                id="featured-work-02"
+                class="featured__project section container"
+            >
+                <div class="featured__project__container">
+                    <h4 class="featured__project__text">Featured Projects</h4>
+
+                    <div class="featured__project__wrapper">
+                        <div
+                            class="featured__project__video"
+                            data-playback-id="w4Zj3eeapaSmgtdnrQ2deB375YJN8RuPFr01W01paVwXk"
+                        >
+                            <img
+                                class="featured__project__thumbnail"
+                                src="/assets/images/km_VRT_LETS_RIDE_BOI_30sec_thumbnail.png"
+                                alt="VRT LETS RIDE BOI 30sec thumbnail"
+                                loading="lazy"
+                                aria-label="VRT LETS RIDE BOI 30sec thumbnail"
+                            />
+                            <img
+                                class="featured__project__gif lazy-gif"
+                                src=""
+                                data-gif="https://image.mux.com/w4Zj3eeapaSmgtdnrQ2deB375YJN8RuPFr01W01paVwXk/animated.webp?start=27&end=30&fps=15&width=640"
+                                loading="lazy"
+                                aria-label="Ford Bronco DUST IS GOLD animated preview"
+                            />
+                        </div>
+
+                        <div class="featured__project__details__container">
+                            <img
+                                src="/assets/images/Solo_Star_Orange.png"
+                                alt="Solo Star Orange"
+                                loading="eager"
+                                aria-label="Solo Star Orange"
+                                class="featured__project__svg"
+                            />
+                            <div class="featured__project__details">
+                                <h2 class="featured__project__name">
+                                    Kailee McGee
+                                </h2>
+                                <h4 class="featured__project__type">
+                                    Commercial
+                                </h4>
+                            </div>
+                            <div class="featured__project__details">
+                                <h3 class="featured__project__company">VRT</h3>
+                                <h3 class="featured__project__title">
+                                    Let's Ride Boi
+                                </h3>
+                            </div>
+                            <a class="featured__project__link" href="#home"
+                                >More from Kailee</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <lord-icon
+                    class="scroll-down-line"
+                    src="https://cdn.lordicon.com/ksmzzfxc.json"
+                    trigger="loop"
+                    stroke="bold"
+                    state="loop-slide"
+                    colors="primary:#ff4e00,secondary:#ef9622"
+                ></lord-icon>
+            </section>
+            <section
+                id="featured-work-03"
+                class="featured__project section container"
+            >
+                <div class="featured__project__container">
+                    <h4 class="featured__project__text">Featured Projects</h4>
+
+                    <div class="featured__project__wrapper">
+                        <div
+                            class="featured__project__video"
+                            data-playback-id="mACdPBjc3T8h71wIIotEkstAQ5omVWgWCbbz101700drQ"
+                        >
+                            <img
+                                class="featured__project__thumbnail"
+                                src="/assets/images/ld_3m_SEE_ME_60sec_thumbnail.png"
+                                alt="3M SEE ME 60sec thumbnail"
+                                loading="lazy"
+                                aria-label="3M SEE ME 60sec thumbnail"
+                            />
+                            <img
+                                class="featured__project__gif lazy-gif"
+                                src=""
+                                data-gif="https://image.mux.com/mACdPBjc3T8h71wIIotEkstAQ5omVWgWCbbz101700drQ/animated.webp?start=45&end=50&fps=15&width=640"
+                                loading="lazy"
+                                aria-label="Ford Bronco DUST IS GOLD animated preview"
+                            />
+                        </div>
+
+                        <div class="featured__project__details__container">
+                            <img
+                                src="/assets/images/Solo_Star_Orange.png"
+                                alt="Solo Star Orange"
+                                loading="eager"
+                                aria-label="Solo Star Orange"
+                                class="featured__project__svg"
+                            />
+                            <div class="featured__project__details">
+                                <h2 class="featured__project__name">
+                                    Lorenzo De Guia
+                                </h2>
+                                <h4 class="featured__project__type">
+                                    Commercial
+                                </h4>
+                            </div>
+                            <div class="featured__project__details">
+                                <h3 class="featured__project__company">3M</h3>
+                                <h3 class="featured__project__title">See Me</h3>
+                            </div>
+                            <a class="featured__project__link" href="#home"
+                                >More from Lorenzo</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <lord-icon
+                    class="scroll-down-line"
+                    src="https://cdn.lordicon.com/ksmzzfxc.json"
+                    trigger="loop"
+                    stroke="bold"
+                    state="loop-slide"
+                    colors="primary:#ff4e00,secondary:#ef9622"
+                ></lord-icon>
+            </section>
+            <section
+                id="featured-work-04"
+                class="featured__project section container"
+            >
+                <div class="featured__project__container">
+                    <h4 class="featured__project__text">Featured Projects</h4>
+
+                    <div class="featured__project__wrapper">
+                        <div class="featured__project__video">
+                            <img
+                                class="featured__project__thumbnail"
+                                src="/assets/images/ag_Ford_NFL_SUPER_FAN_90sec_thumbnail.png"
+                                alt="Ford NFL SUPER FAN 90sec thumbnail"
+                                loading="lazy"
+                                aria-label="Ford NFL SUPER FAN 90sec thumbnail"
+                            />
+                            <img
+                                class="featured__project__gif lazy-gif"
+                                src=""
+                                data-gif="https://image.mux.com/XdvyCtxC01GgLyKOlSNmhitkhmZgk9L402S6DQPf7bonY/animated.webp?start=13&end=20&fps=15&width=640"
+                                loading="lazy"
+                                aria-label="Ford Bronco DUST IS GOLD animated preview"
+                            />
+                        </div>
+
+                        <div class="featured__project__details__container">
+                            <img
+                                src="/assets/images/Solo_Star_Orange.png"
+                                alt="Solo Star Orange"
+                                loading="eager"
+                                aria-label="Solo Star Orange"
+                                class="featured__project__svg"
+                            />
+                            <div class="featured__project__details">
+                                <h2 class="featured__project__name">
+                                    Anthony Garth
+                                </h2>
+                                <h4 class="featured__project__type">
+                                    Commercial
+                                </h4>
+                            </div>
+                            <div class="featured__project__details">
+                                <h3 class="featured__project__company">
+                                    Ford | NFL
+                                </h3>
+                                <h3 class="featured__project__title">
+                                    Superfan
+                                </h3>
+                            </div>
+                            <a class="featured__project__link" href="#home"
+                                >More from Anthony</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <lord-icon
+                    class="scroll-down-line"
+                    src="https://cdn.lordicon.com/ksmzzfxc.json"
+                    trigger="loop"
+                    stroke="bold"
+                    state="loop-slide"
+                    colors="primary:#ff4e00,secondary:#ef9622"
+                ></lord-icon>
+            </section>
+            <section id="about" class="about section container">
+                <h2 class="about__section__title">Who We Are</h2>
+                <p class="about__section__text">
+                    Electra Filmworks specializes in commercials, music videos,
+                    and short films. We deliver high-quality content that
+                    connects with audiences and brings your vision to life with
+                    precision. Our focus is on excellence and exceeding
+                    expectations.
+                </p>
+                <img
+                    class="about__section__image"
+                    src="/assets/images/Bolt_Star_Orange.png"
+                    alt="Electra Filmworks Logo"
+                    loading="lazy"
+                />
+                <lord-icon
+                    class="scroll-down-line"
+                    src="https://cdn.lordicon.com/ksmzzfxc.json"
+                    trigger="loop"
+                    stroke="bold"
+                    state="loop-slide"
+                    colors="primary:#ff4e00,secondary:#ef9622"
+                ></lord-icon>
+            </section>
+            <section id="staff" class="team section container">
+                <h2 class="team__section__title">The Team</h2>
+                <img
+                    src="/assets/images/Solo_Star_White.png"
+                    class="team__star-decoration"
+                    alt="Solo Star Red"
+                    loading="eager"
+                    aria-label="Solo Star Red"
+                />
+                <div class="team__section__wrapper">
+                    <div class="team__member__container">
+                        <h3 class="team__member__role">Director | Founder</h3>
+                        <h3 class="team__member__name">Ze'ev Waismann</h3>
+                        <p class="team__member__phone">+1 (323) 540-1127</p>
+                        <a
+                            href="mailto:zwaismann@electrafilmworks.com"
+                            class="team__member__email"
+                        >
+                            zwaismann@electrafilmworks.com
+                        </a>
+                        <a
+                            class="team__member__linkedin"
+                            target="_blank"
+                            href="https://www.linkedin.com/in/electra-filmworks-984b242a4/"
+                            ><lord-icon
+                                src="https://cdn.lordicon.com/hgmcdbkt.json"
+                                class="staff__socials_icons"
+                                trigger="hover"
+                                stroke="regular"
+                                colors="primary:#ff4e00,secondary:#ef9622"
+                            >
+                            </lord-icon
+                        ></a>
+                    </div>
+                    <div class="team__member__container">
+                        <h3 class="team__member__role">
+                            Executive Producer | Founder
+                        </h3>
+                        <h3 class="team__member__name">Tristan Drew</h3>
+                        <p class="team__member__phone">+1 (323) 864-5568</p>
+                        <a
+                            href="mailto:tristan@electrafilmworks.com"
+                            class="team__member__email"
+                        >
+                            tristan@electrafilmworks.com
+                        </a>
+                        <a
+                            class="team__member__linkedin"
+                            target="_blank"
+                            href="https://www.linkedin.com/in/electra-filmworks-984b242a4/"
+                            ><lord-icon
+                                src="https://cdn.lordicon.com/hgmcdbkt.json"
+                                class="staff__socials_icons"
+                                trigger="hover"
+                                stroke="regular"
+                                colors="primary:#ff4e00,secondary:#ef9622"
+                            >
+                            </lord-icon
+                        ></a>
+                    </div>
+                    <div class="team__member__container">
+                        <h3 class="team__member__role">Executive Producer</h3>
+                        <h3 class="team__member__name">José A. Alvarez</h3>
+                        <p class="team__member__phone">+1 (917) 549-3901</p>
+                        <a
+                            href="mailto:jose@electrafilmworks.com"
+                            class="team__member__email"
+                        >
+                            jose@electrafilmworks.com
+                        </a>
+                        <a
+                            class="team__member__linkedin"
+                            target="_blank"
+                            href="https://www.linkedin.com/in/electra-filmworks-984b242a4/"
+                        >
+                            <lord-icon
+                                src="https://cdn.lordicon.com/hgmcdbkt.json"
+                                class="staff__socials_icons"
+                                trigger="hover"
+                                stroke="regular"
+                                colors="primary:#ff4e00,secondary:#ef9622"
+                            >
+                            </lord-icon>
+                        </a>
+                    </div>
+                </div>
+                <lord-icon
+                    class="scroll-down-line"
+                    src="https://cdn.lordicon.com/ksmzzfxc.json"
+                    trigger="loop"
+                    stroke="bold"
+                    state="loop-slide"
+                    colors="primary:#ff4e00,secondary:#ef9622"
+                ></lord-icon>
+            </section>
+            <section id="reps" class="reps section">
+                <h3 class="reps__section__title">Representatives</h3>
+                <img
+                    class="reps__section__image"
+                    src="/assets/images/Solo_Star_White.png"
+                    alt="Electra Filmworks Logo"
+                    loading="lazy"
+                />
+                <ul class="reps__wrapper">
+                    <li class="reps__container">
+                        <h3 class="reps__region">East Coast</h3>
+                        <h3 class="reps__name">Ilene Silberman</h3>
+                        <p class="reps__company">Silberman Productions</p>
+                        <a
+                            class="reps__email"
+                            href="mailto:silbermanpro@gmail.com"
+                            >silbermanpro@gmail.com</a
+                        >
+                        <p class="reps__phone">+1 (917) 880-6747</p>
+                    </li>
+                    <li class="reps__container">
+                        <h3 class="reps__region">East Coast</h3>
+                        <h3 class="reps__name">Ilene Silberman</h3>
+                        <p class="reps__company">Silberman Productions</p>
+                        <a
+                            class="reps__email"
+                            href="mailto:silbermanpro@gmail.com"
+                            >silbermanpro@gmail.com</a
+                        >
+                        <p class="reps__phone">+1 (917) 880-6747</p>
+                    </li>
+                    <li class="reps__container">
+                        <h3 class="reps__region">East Coast</h3>
+                        <h3 class="reps__name">Ilene Silberman</h3>
+                        <p class="reps__company">Silberman Productions</p>
+                        <a
+                            class="reps__email"
+                            href="mailto:silbermanpro@gmail.com"
+                            >silbermanpro@gmail.com</a
+                        >
+                        <p class="reps__phone">+1 (917) 880-6747</p>
+                    </li>
+                    <li class="reps__container">
+                        <h3 class="reps__region">East Coast</h3>
+                        <h3 class="reps__name">Ilene Silberman</h3>
+                        <p class="reps__company">Silberman Productions</p>
+                        <a
+                            class="reps__email"
+                            href="mailto:silbermanpro@gmail.com"
+                            >silbermanpro@gmail.com</a
+                        >
+                        <p class="reps__phone">+1 (917) 880-6747</p>
+                    </li>
+                    <li class="reps__container">
+                        <h3 class="reps__region">East Coast</h3>
+                        <h3 class="reps__name">Ilene Silberman</h3>
+                        <p class="reps__company">Silberman Productions</p>
+                        <a
+                            class="reps__email"
+                            href="mailto:silbermanpro@gmail.com"
+                            >silbermanpro@gmail.com</a
+                        >
+                        <p class="reps__phone">+1 (917) 880-6747</p>
+                    </li>
+                    <li class="reps__container">
+                        <h3 class="reps__region">East Coast</h3>
+                        <h3 class="reps__name">Ilene Silberman</h3>
+                        <p class="reps__company">Silberman Productions</p>
+                        <a
+                            class="reps__email"
+                            href="mailto:silbermanpro@gmail.com"
+                            >silbermanpro@gmail.com</a
+                        >
+                        <p class="reps__phone">+1 (917) 880-6747</p>
+                    </li>
+                </ul>
+                <footer class="footer">
+                    <img
+                        class="footer__logo"
+                        src="/assets/images/Electra_White.png"
+                        alt="Electra Logo"
+                        loading="lazy"
+                    />
+                    <ul class="footer_socials_wrapper">
+                        <li>
+                            <a
+                                class="footer_social"
+                                target="_blank"
+                                href="https://www.instagram.com/electrafilmworks/"
+                                aria-label="Instagram"
+                            >
+                                <img
+                                    src="/assets/images/instagram_logo_white.png"
+                                    alt="Instagram Logo"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="footer_social"
+                                target="_blank"
+                                href="https://www.linkedin.com/in/electra-filmworks-984b242a4/"
+                                aria-label="LinkedIn"
+                            >
+                                <img
+                                    src="/assets/images/linkedin_logo_white.png"
+                                    alt="LinkedIn Logo"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footer__pattern"></div>
+                </footer>
+            </section>
+        </main>
+
+        <div class="scroll-indicators">
+            <div class="indicator active" data-target="#home">
+                <span></span>
+            </div>
+            <div class="indicator" data-target="#featured-work-01"></div>
+            <div class="indicator" data-target="#featured-work-02"></div>
+            <div class="indicator" data-target="#featured-work-03"></div>
+            <div class="indicator" data-target="#featured-work-04"></div>
+            <div class="indicator" data-target="#about"></div>
+            <div class="indicator" data-target="#staff"></div>
+            <div class="indicator" data-target="#reps"></div>
+        </div>
+
+        <div id="videoModal" class="modal">
+            <div class="modal-content"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+.team {
+    text-align: center;
+    gap: 1rem;
+}
+
+.team,
+.team__section__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team__section__wrapper {
+    text-wrap: nowrap;
+    gap: 1rem;
+}
+
+.team__member__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    width: 100%;
+}
+
+.team__section__title,
+.team__member__role {
+    color: var(--clr-light-orange);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.team__section__title {
+    font-size: var(--fs-base);
+    letter-spacing: 3px;
+}
+
+.team__member__role {
+    letter-spacing: 2px;
+}
+
+.team__member__role,
+.team__member__phone,
+.team__member__email {
+    font-size: var(--fs-xs);
+}
+
+.team__star-decoration {
+    height: 1rem;
+    margin-inline: auto;
+}
+
+.team__member__name {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+}
+
+.team__member__email {
+    font-style: italic;
+    transition: all 0.5s ease;
+    display: block;
+}
+
+.team__member__email:hover {
+    color: var(--clr-light-orange);
+}
+
+.team__member__linkedin lord-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+}

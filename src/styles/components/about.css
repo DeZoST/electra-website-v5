@@ -1,0 +1,39 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.about__section__title {
+    font-size: var(--fs-2xl);
+    letter-spacing: 3px;
+    color: var(--clr-light-orange);
+    font-weight: 800;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.about__section__text {
+    max-width: 38ch;
+    font-size: var(--fs-xs);
+    letter-spacing: 2px;
+    line-height: 1.8rem;
+    z-index: 1;
+    text-align: justify;
+    padding: 1.75rem;
+}
+
+.about__section__image {
+    position: absolute;
+    opacity: 0.2;
+    filter: blur(4px);
+    height: 40rem;
+    transition: all 0.8s ease-in-out;
+}
+
+.about__section__image:hover {
+    scale: 1.1;
+    filter: blur(0);
+}
