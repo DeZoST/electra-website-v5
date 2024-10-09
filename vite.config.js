@@ -3,7 +3,7 @@ import { resolve } from "path";
 
 export default defineConfig({
     base: "/electra-website-v5/",
-    build: {
+    /*ld: {
         rollupOptions: {
             input: {
                 main: resolve(__dirname, "index.html"), // Main entry point
@@ -14,5 +14,5 @@ export default defineConfig({
                 zev: resolve(__dirname, "pages/zeev-waismann.html"), // Additional entry point
             },
         },
-    },
+    },*/
 });
