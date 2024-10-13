@@ -34,7 +34,7 @@ domReady(() => {
 
         if (directorName) {
             initProjectSections(
-                "../../data/directorProjects.json",
+                "/electra-website-v5/data/directorProjects.json",
                 directorName
             ); // Pass director name as sectionPrefix
         } else {
