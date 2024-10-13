@@ -10,7 +10,6 @@ export const scrollToSection = (sectionIndex) => {
     const main = document.querySelector("main");
     const sectionHeight = window.innerHeight;
 
-    // Use requestAnimationFrame for smoother transitions
     window.requestAnimationFrame(() => {
         main.style.transform = `translateY(-${sectionHeight * sectionIndex}px)`;
     });

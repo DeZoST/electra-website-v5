@@ -1,18 +1,30 @@
 import { defineConfig } from "vite";
+import viteCompression from "vite-plugin-compression";
 import { resolve } from "path";
 
 export default defineConfig({
     base: "/electra-website-v5/",
-    /*ld: {
+    build: {
+        target: "esnext",
+        minify: "esbuild",
+        cssCodeSplit: true,
         rollupOptions: {
             input: {
-                main: resolve(__dirname, "index.html"), // Main entry point
-                lorenzo: resolve(__dirname, "pages/lorenzo-deguia.html"), // Additional entry point
-                anthony: resolve(__dirname, "pages/anthony-garth.html"), // Additional entry point
-                kailee: resolve(__dirname, "pages/kailee-mcgee.html"), // Additional entry point
-                ben: resolve(__dirname, "pages/ben-weinstein.html"), // Additional entry point
-                zev: resolve(__dirname, "pages/zeev-waismann.html"), // Additional entry point
+                main: resolve(__dirname, "index.html"),
+                lorenzo: resolve(__dirname, "public/pages/lorenzo/index.html"),
+                anthony: resolve(__dirname, "public/pages/anthony/index.html"),
+                kailee: resolve(__dirname, "public/pages/kailee/index.html"),
+                ben: resolve(__dirname, "public/pages/ben/index.html"),
+                zev: resolve(__dirname, "public/pages/zeev/index.html"),
             },
         },
-    },*/
+    },
+    plugins: [
+        viteCompression({
+            algorithm: "gzip",
+            ext: ".gz",
+            threshold: 10240,
+            deleteOriginFile: false,
+        }),
+    ],
 });

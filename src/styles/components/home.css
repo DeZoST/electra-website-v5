@@ -1,9 +1,14 @@
-.home {
+.home,
+.home__directors {
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+.home {
+    align-items: center;
 }
 
 .home__container {
@@ -18,18 +23,17 @@
 }
 
 .home__directors {
+    text-align: left;
     margin-top: 1.5rem;
     font-size: var(--fs-sm);
     letter-spacing: 4px;
-    display: flex;
-    flex-direction: column;
     color: var(--clr-slate-400);
 }
 
 .home__director {
-    transition: all 0.3s ease;
     opacity: 0.5;
     width: fit-content;
+    transition: all 0.3s ease;
 }
 
 .home__director a {

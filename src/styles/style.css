@@ -67,11 +67,9 @@ html {
 
 body {
     min-height: 100vdh;
-    font-size: var(--fs-base);
     color: var(--clr-main-text-white);
     background-color: var(--clr-background-charcoal);
     overflow-x: hidden;
-    font-family: "Montserrat", sans-serif;
 }
 
 main {

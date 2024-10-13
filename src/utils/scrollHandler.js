@@ -2,6 +2,7 @@ import { scrollToSection } from "./scrollTransition.js";
 import { initTouchHandler } from "./touchHandler.js";
 
 let scrollDisabled = false;
+
 /**
  * Controls the disabling of scrolling.
  *
@@ -14,9 +15,6 @@ export const setScrollDisabled = (disabled, context = "Unknown") => {
 
 /**
  * Initializes the scroll handler for detecting scroll events and transitioning between sections.
- * This function listens to the `wheel` event to detect when the user scrolls up or down.
- * It prevents the default scrolling behavior and instead transitions between the sections
- * by applying a CSS `transform` to move the container.
  *
  * @param {NodeListOf<Element>} sections - A list of sections to scroll between.
  */
@@ -24,7 +22,7 @@ export const initScrollHandler = (sections) => {
     let currentSectionIndex = 0;
     let isScrolling = false;
     const indicators = document.querySelectorAll(".indicator");
-    const navLinks = document.querySelectorAll(".nav__link a"); // Select nav links
+    const navLinks = document.querySelectorAll(".nav__link a");
 
     const onScroll = (event) => {
         if (isScrolling || scrollDisabled) {
@@ -117,7 +115,6 @@ export const initScrollHandler = (sections) => {
 
                 scrollToSection(currentSectionIndex);
                 updateActiveIndicator(indicator);
-
                 console.log(
                     `Navigated to section: ${target}, index updated to: ${currentSectionIndex}`
                 );
@@ -125,7 +122,6 @@ export const initScrollHandler = (sections) => {
         });
     });
 
-    // **Nav-Link Click Handling**
     navLinks.forEach((navLink) => {
         navLink.addEventListener("click", (event) => {
             event.preventDefault();
@@ -139,7 +135,6 @@ export const initScrollHandler = (sections) => {
 
                 scrollToSection(currentSectionIndex);
                 updateActiveIndicator(indicators[currentSectionIndex]);
-
                 console.log(
                     `Nav link clicked. Navigated to section: ${target}, index updated to: ${currentSectionIndex}`
                 );

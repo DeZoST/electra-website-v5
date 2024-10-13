@@ -1,14 +1,18 @@
 {
-  "name": "electra-website-v5",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^5.4.1"
-  }
+    "name": "electra-website-v5",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist -f -verbose"
+    },
+    "devDependencies": {
+        "gh-pages": "^6.1.1",
+        "vite": "^5.4.1",
+        "vite-plugin-compression": "^0.5.1"
+    }
 }

@@ -1,9 +1,6 @@
-import { initializeVideoModal } from "./videoModal.js";
+// import { initializeVideoModal } from "./videoModal.js";
 
-/**
- * Initializes GIF hover effect for featured projects.
- */
-function initializeGifHoverEffect() {
+/* function initializeGifHoverEffect() {
     const hoverContainers = document.querySelectorAll(
         ".featured__project__video"
     );
@@ -49,9 +46,8 @@ function initializeGifHoverEffect() {
         container.addEventListener("mouseleave", hideGif);
         container.addEventListener("click", () => openModal(container));
     });
-}
+} */
 
-// Preload Mux player elements for all directors on page load
 function preloadMuxPlayers() {
     const videoOverlay = document.querySelector(".director-video-overlay");
     const playbackIds = {
@@ -62,7 +58,6 @@ function preloadMuxPlayers() {
         "Ze'ev Waismann": "GMWX1Z3aR9J01XycOHiRN3e3hAdg8ZqSR401jQqIQ402SI",
     };
 
-    // Store the created mux players
     const muxPlayers = {};
 
     Object.entries(playbackIds).forEach(([directorName, playbackId]) => {
@@ -71,10 +66,10 @@ function preloadMuxPlayers() {
         muxPlayer.setAttribute("autoplay", "true");
         muxPlayer.setAttribute("muted", "true");
         muxPlayer.setAttribute("loop", "true");
+        muxPlayer.setAttribute("disable-cookies", "true");
         muxPlayer.setAttribute("playsinline", "true");
         muxPlayer.setAttribute("playback-id", playbackId);
 
-        // Set initial styles for preload (hidden)
         muxPlayer.style.width = "100%";
         muxPlayer.style.height = "100%";
         muxPlayer.style.objectFit = "cover";
@@ -83,9 +78,8 @@ function preloadMuxPlayers() {
         muxPlayer.style.left = "0";
         muxPlayer.style.opacity = "0";
         muxPlayer.style.zIndex = "-1";
-        muxPlayer.style.display = "none"; // Start hidden
+        muxPlayer.style.display = "none";
 
-        // Append to the overlay and store in the object
         videoOverlay.appendChild(muxPlayer);
         muxPlayers[directorName] = muxPlayer;
     });
@@ -93,9 +87,6 @@ function preloadMuxPlayers() {
     return muxPlayers;
 }
 
-/**
- * Initializes Mux player hover effect for director names.
- */
 function initializeDirectorVideoHoverEffect(muxPlayers) {
     const directorLinks = document.querySelectorAll(".home__director a");
     const videoOverlay = document.querySelector(".director-video-overlay");
@@ -107,7 +98,6 @@ function initializeDirectorVideoHoverEffect(muxPlayers) {
         if (!muxPlayer) return;
 
         const showVideo = () => {
-            // Ensure it's visible in the overlay
             muxPlayer.style.display = "block";
             videoOverlay.style.opacity = "1";
             videoOverlay.style.zIndex = "1";
@@ -127,12 +117,10 @@ function initializeDirectorVideoHoverEffect(muxPlayers) {
     });
 }
 
-// Initialize both hover effects
 function initializeAllHoverEffects() {
-    initializeGifHoverEffect();
+    //initializeGifHoverEffect();
     const muxPlayers = preloadMuxPlayers();
     initializeDirectorVideoHoverEffect(muxPlayers);
 }
 
-// Export the initializer for use in main.js or other files
 export { initializeAllHoverEffects };

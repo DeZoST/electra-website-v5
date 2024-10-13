@@ -1,0 +1,25 @@
+// src/components/Header/Header.js
+
+export function loadHeader() {
+    const header = document.createElement("header");
+    header.className = "header";
+    header.innerHTML = `
+        <a href="#home" class="logo">
+            <img src="assets/images/Electra_Orange.webp" alt="Electra Logo" loading="lazy" />
+        </a>
+        <nav class="nav-menu">
+            <ul class="nav__links">
+                <li class="nav__link"><a href="#home">Directors</a></li>
+                <li class="nav__link"><a href="#about">About</a></li>
+                <li class="nav__link"><a href="#reps">Contact</a></li>
+            </ul>
+            <button id="menu-toggle" aria-label="Open main menu" class="menu-toggle">
+                <img src="assets/images/Bolt_Star_Orange.webp" alt="Main Navigation Menu" loading="lazy" />
+            </button>
+        </nav>
+    `;
+    document.body.insertAdjacentElement("afterbegin", header);
+}
+
+// Import CSS
+import "./Header.css";

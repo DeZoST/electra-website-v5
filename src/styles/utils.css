@@ -55,20 +55,17 @@ img {
 }
 
 section {
-    min-height: 100dvh;
+    height: 100dvh;
     opacity: 0;
     transition: all 0.6s ease;
 }
 
 mux-player {
-    /* Hide the loading indicator */
     --loading-indicator: none;
 
-    /* Target all sections by excluding the section prefix */
     --live-button: none;
     --seek-backward-button: none;
     --seek-forward-button: none;
-
     --captions-button: none;
     --airplay-button: none;
     --pip-button: none;
@@ -83,7 +80,6 @@ mux-player {
     opacity: 1;
 }
 
-/* Fullscreen video overlay */
 .director-video-overlay {
     position: fixed;
     top: 0;
@@ -102,8 +98,6 @@ mux-player {
     height: 100%;
     max-width: none;
     max-height: none;
-    object-fit: cover;
-    aspect-ratio: 16 / 9;
 }
 
 .scroll-down-line {
@@ -130,7 +124,6 @@ mux-player {
     gap: 0.5rem;
 }
 
-/* ---INDICATORS--- */
 .scroll-indicators {
     position: fixed;
     right: 1rem;
@@ -166,36 +159,30 @@ mux-player {
         max-width: 29.6875rem;
     }
 
+    /* Home Section */
     .home__title {
         font-size: var(--fs-xl);
         letter-spacing: 8px;
     }
-
     .home__directors {
         font-size: var(--fs-base);
     }
 
+    /* Featured Section */
     .featured__project__thumbnail {
         max-width: 400px;
     }
-
-    .featured__project__text {
-        font-size: var(--fs-sm);
-    }
-
+    .featured__project__text,
+    .featured__project__company,
+    .featured__project__link,
     .featured__project__type {
         font-size: var(--fs-xs);
     }
-
-    .featured__project__company,
-    .featured__project__link {
-        font-size: var(--fs-sm);
-    }
-
     .featured__project__title {
         font-size: var(--fs-xl);
     }
 
+    /* About Section */
     .about__section__text {
         font-size: var(--fs-sm);
     }
@@ -207,43 +194,47 @@ mux-player {
         max-width: 40rem;
     }
 
+    /* Header Section */
     .header {
-        padding: 2.5rem 4.5rem;
+        padding: 40px 88px;
     }
-
     .logo img {
         height: 1.2rem;
     }
-
     .menu-toggle img {
         height: 3rem;
     }
+
+    /* Mobile Menu */
+    .mobile-menu__links {
+        font-size: var(--fs-base);
+    }
+
+    /* Featured Section */
     .featured__project__thumbnail {
         max-width: 500px;
     }
-
     .featured__project__name,
     .featured__project__title {
         font-size: var(--fs-2xl);
     }
-
     .featured__project__type {
         font-size: var(--fs-sm);
     }
-
     .featured__project__company,
     .featured__project__link {
         font-size: var(--fs-base);
     }
-
     .featured__project__text {
         margin-bottom: 1.5rem;
     }
 
+    /* About Section */
     .about__section__text {
         font-size: var(--fs-base);
     }
 
+    /* Reps Section */
     .reps__region,
     .reps__phone,
     .reps__company,
@@ -252,10 +243,10 @@ mux-player {
         font-size: var(--fs-sm);
     }
 
+    /* Footer Section */
     .footer__logo {
         height: 1.25rem;
     }
-
     .footer_social img {
         height: 1.9rem;
     }
@@ -267,26 +258,25 @@ mux-player {
         max-width: 48rem;
     }
 
+    /* Home Section */
     .home__title {
         font-size: var(--fs-3xl);
     }
 
+    /* Nav Section */
     .nav__links {
         display: flex;
         align-items: center;
     }
-
     .nav__link a {
         padding: 1.5rem 2rem;
         position: relative;
         letter-spacing: 2px;
         transition: color 0.3s ease;
     }
-
     .nav__link a:hover {
         color: var(--clr-light-orange);
     }
-
     .nav__link a::after {
         position: absolute;
         top: 50%;
@@ -294,81 +284,76 @@ mux-player {
         transform: translateY(-50%);
         height: 1rem;
         content: "";
-        color: var(--clr-main-text-white);
         border: 1px solid var(--clr-light-orange);
     }
-
     .nav__link:nth-child(3) a::after {
         display: none;
     }
 
+    /* Featured Section */
     .featured__project__wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 2rem;
     }
-
     .featured__project__svg {
         margin-top: 0;
     }
-
     .featured__project__name,
     .featured__project__title {
         font-size: var(--fs-base);
     }
-
     .featured__project__type,
     .featured__project__company,
     .featured__project__link,
     .featured__project__text {
         font-size: var(--fs-xs);
     }
-
     .featured__project__text {
         margin-bottom: 2rem;
     }
 
+    /* About Section */
     .about__section__text {
         max-width: 50ch;
     }
 
+    /* Team Section */
     .team__section__title {
         font-size: var(--fs-lg);
     }
-
     .team__star-decoration {
         height: 1.5rem;
         margin-bottom: 2rem;
     }
-
     .team__section__wrapper {
         flex-direction: row;
         width: 100%;
         gap: 0;
     }
 
+    /* Reps Section */
     .reps__section__image {
         height: 1.5rem;
         margin-bottom: 2rem;
     }
 
+    /* Footer Section */
     .footer {
         justify-content: flex-start;
         gap: 3rem;
     }
-
     .footer__logo {
         height: 1.5rem;
     }
-
     .footer__pattern {
         display: block;
         position: absolute;
         top: 0;
         right: 0;
         height: 100%;
-        background-image: url("/assets/images/Star_Pattern_White.png");
+        background-image: url("/assets/images/Star_Pattern_White.webp");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: right;
@@ -376,11 +361,11 @@ mux-player {
         z-index: 2;
     }
 
+    /* Indicator Section */
     .indicator {
         width: 8px;
         height: 8px;
     }
-
     .scroll-indicators {
         right: 1.5rem;
     }
@@ -392,89 +377,78 @@ mux-player {
         max-width: 64rem;
     }
 
+    /* Featured Section */
     .featured__project__details__container {
         gap: 3rem;
     }
-
     .featured__project__thumbnail {
         max-width: 650px;
     }
-
     .featured__project__name {
         font-size: var(--fs-2xl);
     }
-
     .featured__project__type,
     .featured__project__company,
     .featured__project__link,
     .featured__project__text {
         font-size: var(--fs-sm);
     }
-
     .featured__project__title {
         font-size: var(--fs-xl);
     }
 
+    /* Team Section */
     .team__member__container {
         gap: 1.5rem;
     }
-
     .team__section__title {
         font-size: var(--fs-xl);
         letter-spacing: 4px;
     }
-
     .team__star-decoration {
         height: 2rem;
     }
-
     .team__member__role {
         font-size: var(--fs-sm);
         letter-spacing: 3px;
     }
-
     .team__member__email,
     .team__member__phone {
         font-size: var(--fs-base);
     }
-
     .team__member__name {
         font-size: var(--fs-2xl);
     }
-
     .team__member__linkedin lord-icon {
         height: 1.5rem;
         width: 1.5rem;
     }
 
+    /* Reps Section */
     .reps {
         gap: 1rem;
     }
-
     .reps__wrapper {
         gap: 2rem;
     }
-
     .reps__name {
         font-size: var(--fs-xl);
     }
-
     .reps__section__title {
         font-size: var(--fs-xl);
     }
-
     .reps__section__image {
         height: 2rem;
     }
-
     .reps__phone,
     .reps__company,
     .reps__email {
         font-size: var(--fs-base);
     }
 
+    /* Footer Section */
     .footer {
-        padding: 3rem 4.5rem;
+        padding: 2rem 4.5rem;
     }
 }
 
@@ -484,34 +458,33 @@ mux-player {
         max-width: 80rem;
     }
 
+    /* Featured Section */
     .featured__project__thumbnail {
         max-width: 800px;
     }
-
     .featured__project__name {
         font-size: var(--fs-4xl);
     }
-
     .featured__project__type,
     .featured__project__company,
     .featured__project__link,
     .featured__project__text {
         font-size: var(--fs-base);
     }
-
     .featured__project__title {
         font-size: var(--fs-2xl);
     }
 
+    /* Reps Section */
     .reps__container {
         gap: 0.5rem;
     }
 
+    /* Scroll Indicator */
     .indicator {
         width: 10px;
         height: 10px;
     }
-
     .scroll-indicators {
         right: 2rem;
     }

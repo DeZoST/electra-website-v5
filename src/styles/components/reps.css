@@ -1,5 +1,9 @@
-.reps__wrapper {
+.reps__wrapper,
+.reps__container {
     display: flex;
+}
+
+.reps__wrapper {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -7,22 +11,27 @@
 }
 
 .reps__container {
-    display: flex;
     flex-direction: column;
     width: fit-content;
     flex-basis: 35%;
     flex-grow: 1;
 }
 
-.reps__section__image {
+.reps__section__image,
+.team__star-decoration {
     height: 1rem;
     margin-inline: auto;
 }
 
 .reps__region,
+.reps__section__title,
+.reps__company {
+    text-transform: uppercase;
+}
+
+.reps__region,
 .reps__section__title {
     color: var(--clr-light-orange);
-    text-transform: uppercase;
     font-weight: 700;
 }
 
@@ -31,32 +40,18 @@
     letter-spacing: 3px;
 }
 
-.reps__region {
-    letter-spacing: 2px;
-}
-
 .reps__region,
 .reps__phone,
 .reps__company,
-.reps__name {
+.reps__name,
+.reps__email {
     font-size: var(--fs-xs);
 }
 
 .reps__email {
     font-size: var(--fs-xxs);
-}
-
-.reps__company {
-    text-transform: uppercase;
-}
-
-.reps__name {
-    font-weight: 700;
-}
-
-.reps__email {
     font-style: italic;
-    transition: all 0.5s ease;
+    transition: color 0.5s ease;
     display: block;
 }
 
