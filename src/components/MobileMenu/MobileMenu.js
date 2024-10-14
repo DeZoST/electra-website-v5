@@ -21,18 +21,12 @@ export const initMobileMenu = () => {
         mobileMenu.classList.remove("open");
         mobileMenu.style.display = "none";
         setScrollDisabled(false, "Mobile Menu Close");
-        console.log("Mobile menu closed, scroll enabled.");
     };
 
     const toggleMenu = (event) => {
         event.stopPropagation();
         const isOpen = mobileMenu.classList.toggle("open");
         setScrollDisabled(isOpen, "Mobile Menu Toggle");
-        console.log(
-            `Mobile menu ${
-                isOpen ? "opened" : "closed"
-            }, scroll disabled: ${isOpen}`
-        );
 
         if (isOpen) {
             mobileMenu.style.display = "flex";
@@ -68,11 +62,6 @@ export const initMobileMenu = () => {
                 const targetIndex = Array.from(sections).indexOf(targetSection);
 
                 scrollToSection(targetIndex);
-
-                console.log(
-                    `Mobile menu link clicked. Navigated to section: ${target}, index updated to: ${targetIndex}`
-                );
-
                 closeMenu();
             }
         });

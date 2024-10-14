@@ -5,7 +5,6 @@ let scrollDisabled = false;
 
 export const setScrollDisabled = (disabled, context = "Unknown") => {
     scrollDisabled = disabled;
-    console.log(`Scroll Disabled set to: ${scrollDisabled} by ${context}`);
 };
 
 export const initScrollHandler = (sections) => {
@@ -16,9 +15,6 @@ export const initScrollHandler = (sections) => {
 
     const onScroll = (event) => {
         if (isScrolling || scrollDisabled) {
-            console.log(
-                `Scroll prevented. isScrolling: ${isScrolling}, scrollDisabled: ${scrollDisabled}`
-            );
             return;
         }
 
@@ -72,9 +68,6 @@ export const initScrollHandler = (sections) => {
                     const index = Array.from(sections).indexOf(entry.target);
                     currentSectionIndex = index;
                     entry.target.classList.add("section-visible");
-                    console.log(
-                        `Section ${entry.target.id} is now visible, index set to: ${currentSectionIndex}`
-                    );
                     updateActiveIndicator(
                         document.querySelector(
                             `.indicator[data-target="#${sections[index].id}"]`
@@ -105,9 +98,6 @@ export const initScrollHandler = (sections) => {
 
                 scrollToSection(currentSectionIndex);
                 updateActiveIndicator(indicator);
-                console.log(
-                    `Navigated to section: ${target}, index updated to: ${currentSectionIndex}`
-                );
             }
         });
     });
@@ -125,9 +115,6 @@ export const initScrollHandler = (sections) => {
 
                 scrollToSection(currentSectionIndex);
                 updateActiveIndicator(indicators[currentSectionIndex]);
-                console.log(
-                    `Nav link clicked. Navigated to section: ${target}, index updated to: ${currentSectionIndex}`
-                );
             }
         });
     });

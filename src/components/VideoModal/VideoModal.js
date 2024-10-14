@@ -14,7 +14,6 @@ export function initializeVideoModal() {
 
     const openModal = (container) => {
         setScrollDisabled(true, "Modal Open");
-        console.log("Modal opened, scroll disabled.");
 
         if (muxPlayer) {
             muxPlayer.remove();
@@ -47,7 +46,6 @@ export function initializeVideoModal() {
 
     const closeModal = () => {
         setScrollDisabled(false, "Modal Close");
-        console.log("Modal closed, scroll enabled.");
 
         modal.style.display = "none";
         allContent.classList.remove("blur-background");
