@@ -10,16 +10,18 @@ export function initializeVideoModal() {
     document.body.appendChild(modal);
 
     const allContent = document.querySelector(".container");
-    let muxPlayer = document.getElementById("muxPlayer");
+    let muxPlayer;
 
     const openModal = (container) => {
         setScrollDisabled(true, "Modal Open");
         console.log("Modal opened, scroll disabled.");
 
+        // Remove any existing muxPlayer instances
         if (muxPlayer) {
             muxPlayer.remove();
         }
 
+        // Delay to ensure the DOM updates before adding the new player
         setTimeout(() => {
             muxPlayer = document.createElement("mux-player");
             muxPlayer.id = "muxPlayer";
@@ -29,19 +31,21 @@ export function initializeVideoModal() {
             muxPlayer.setAttribute("autoplay", "");
             muxPlayer.setAttribute("controls", "");
 
+            // Set the playback ID
+            const playbackId = container.dataset.playbackId;
+            muxPlayer.setAttribute("playback-id", playbackId);
+
+            // Add the mux-player to the modal content
             modal.querySelector(".modal-content").appendChild(muxPlayer);
 
-            requestAnimationFrame(() => {
-                const playbackId = container.dataset.playbackId;
-                muxPlayer.setAttribute("playback-id", playbackId);
-            });
-
+            // Attempt to play the video after it's loaded
             muxPlayer.addEventListener("loadeddata", () => {
                 muxPlayer.play().catch((error) => {
                     console.warn("Video playback failed:", error);
                 });
             });
 
+            // Display the modal
             modal.style.display = "flex";
             allContent.classList.add("blur-background");
         }, 100);
@@ -54,20 +58,24 @@ export function initializeVideoModal() {
         modal.style.display = "none";
         allContent.classList.remove("blur-background");
 
-        if (muxPlayer) {
+        // Pause and remove muxPlayer if it exists
+        if (muxPlayer && typeof muxPlayer.pause === "function") {
             muxPlayer.pause();
             setTimeout(() => {
                 muxPlayer.remove();
+                muxPlayer = null; // Clear reference
             }, 100);
         }
     };
 
+    // Close the modal when clicking outside the video area
     window.onclick = (e) => {
         if (e.target === modal) {
             closeModal();
         }
     };
 
+    // Open the modal when clicking on a video container
     document.addEventListener("click", (event) => {
         const videoContainer = event.target.closest(
             ".featured__project__video"
@@ -79,3 +87,5 @@ export function initializeVideoModal() {
 
     return { openModal, closeModal };
 }
+
+import "./VideoModal.css";

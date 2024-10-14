@@ -94,7 +94,6 @@
 
 /* SM */
 @media (min-width: 40rem) {
-    /* Header Section */
     .header {
         padding: 40px 88px;
     }
@@ -108,7 +107,6 @@
 
 /* MD */
 @media (min-width: 48rem) {
-    /* Nav Section */
     .nav__links {
         display: flex;
         align-items: center;

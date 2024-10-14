@@ -62,3 +62,5 @@ export function initProjectSections(jsonFilePath, sectionPrefix) {
         })
         .catch((error) => console.error("Error loading projects:", error));
 }
+
+import "./FeaturedWork.css";

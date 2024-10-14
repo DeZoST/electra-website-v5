@@ -1,0 +1,50 @@
+.scroll-indicators {
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+}
+
+.indicator {
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    height: 6px;
+    width: 6px;
+}
+
+.indicator.active {
+    background-color: white;
+}
+
+.indicator:hover {
+    background-color: var(--clr-light-orange);
+    scale: 1.6;
+}
+
+/* MD */
+@media (min-width: 48rem) {
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+    .scroll-indicators {
+        right: 1.5rem;
+    }
+}
+
+/* XL */
+@media (min-width: 80rem) {
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    .scroll-indicators {
+        right: 2rem;
+    }
+}

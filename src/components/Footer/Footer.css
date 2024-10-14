@@ -1,0 +1,78 @@
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: var(--clr-grad);
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer__logo {
+    height: 0.75rem;
+}
+
+.footer__pattern {
+    display: none;
+}
+
+.footer_socials_wrapper {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer_socials_wrapper li {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.footer_socials_wrapper li:hover {
+    transform: scale(1.2);
+}
+
+.footer_social img {
+    height: 1.25rem;
+}
+
+/* SM */
+@media (min-width: 40rem) {
+    .footer__logo {
+        height: 1.25rem;
+    }
+    .footer_social img {
+        height: 1.9rem;
+    }
+}
+
+/* MD */
+@media (min-width: 48rem) {
+    .footer {
+        justify-content: flex-start;
+        gap: 3rem;
+    }
+    .footer__logo {
+        height: 1.5rem;
+    }
+    .footer__pattern {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-image: url("/assets/images/Star_Pattern_White.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right;
+        width: 45%;
+        z-index: 2;
+    }
+}
+
+/* LG */
+@media (min-width: 64rem) {
+    .footer {
+        padding: 2rem 4.5rem;
+    }
+}

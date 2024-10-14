@@ -5,7 +5,7 @@ export function loadHeader() {
     header.className = "header";
     header.innerHTML = `
         <a href="#home" class="logo">
-            <img src="assets/images/Electra_Orange.webp" alt="Electra Logo" loading="lazy" />
+            <img src="/electra-website-v5/assets/images/Electra_Orange.webp" alt="Electra Logo" loading="lazy" />
         </a>
         <nav class="nav-menu">
             <ul class="nav__links">
@@ -14,7 +14,7 @@ export function loadHeader() {
                 <li class="nav__link"><a href="#reps">Contact</a></li>
             </ul>
             <button id="menu-toggle" aria-label="Open main menu" class="menu-toggle">
-                <img src="assets/images/Bolt_Star_Orange.webp" alt="Main Navigation Menu" loading="lazy" />
+                <img src="/electra-website-v5/assets/images/Bolt_Star_Orange.webp" alt="Main Navigation Menu" loading="lazy" />
             </button>
         </nav>
     `;

@@ -1,5 +1,5 @@
-import { setScrollDisabled } from "./scrollHandler.js";
-import { scrollToSection } from "./scrollTransition.js";
+import { setScrollDisabled } from "../../utils/scrollHandler.js";
+import { scrollToSection } from "../../utils/scrollTransition.js";
 
 export const initMobileMenu = () => {
     const menuToggle = document.getElementById("menu-toggle");
@@ -86,3 +86,5 @@ export const initMobileMenu = () => {
     // Handle screen resizing
     window.addEventListener("resize", manageMenuToggle);
 };
+
+import "./MobileMenu.css";

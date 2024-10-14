@@ -1,6 +1,4 @@
-// src/components/DotsIndicator/DotsIndicator.js
-
-export function loadDotsIndicator(pageType) {
+export function loadDotsIndicator(pageType, sectionCount) {
     const dotsContainer = document.createElement("div");
     dotsContainer.className = "scroll-indicators";
 
@@ -8,21 +6,21 @@ export function loadDotsIndicator(pageType) {
         // Home page indicators
         dotsContainer.innerHTML = `
             <div class="indicator" data-target="#home"></div>
-            <div class="indicator" data-target="#featured-work-01"></div>
-            <div class="indicator" data-target="#featured-work-02"></div>
-            <div class="indicator" data-target="#featured-work-03"></div>
-            <div class="indicator" data-target="#featured-work-04"></div>
+        `;
+        for (let i = 1; i <= sectionCount; i++) {
+            dotsContainer.innerHTML += `<div class="indicator" data-target="#featured-work-0${i}"></div>`;
+        }
+        dotsContainer.innerHTML += `
             <div class="indicator" data-target="#about"></div>
             <div class="indicator" data-target="#staff"></div>
             <div class="indicator" data-target="#reps"></div>
         `;
     } else if (pageType === "director") {
         // Director page indicators
-        dotsContainer.innerHTML = `
-            <div class="indicator" data-target="#featured-work-01"></div>
-            <div class="indicator" data-target="#featured-work-02"></div>
-            <div class="indicator" data-target="#featured-work-03"></div>
-            <div class="indicator" data-target="#featured-work-04"></div>
+        for (let i = 1; i <= sectionCount; i++) {
+            dotsContainer.innerHTML += `<div class="indicator" data-target="#featured-work-0${i}"></div>`;
+        }
+        dotsContainer.innerHTML += `
             <div class="indicator" data-target="#about"></div>
             <div class="indicator" data-target="#others"></div>
         `;
