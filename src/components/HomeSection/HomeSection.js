@@ -1,9 +1,6 @@
-// src/components/HomeSection/HomeSection.js
-
 export function loadHomeSection(insertPosition) {
     const homeSection = document.createElement("section");
     homeSection.id = insertPosition === "first" ? "home" : "others";
-    // Conditionally set the class name based on the insert position
     homeSection.className =
         insertPosition === "last" ? "home section" : "home section container";
 
@@ -23,9 +20,9 @@ export function loadHomeSection(insertPosition) {
 
     const mainSection = document.querySelector("main");
     if (insertPosition === "first") {
-        mainSection.prepend(homeSection); // Add as the first section
+        mainSection.prepend(homeSection);
     } else {
-        mainSection.appendChild(homeSection); // Add as the last section
+        mainSection.appendChild(homeSection);
     }
 }
 

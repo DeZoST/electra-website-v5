@@ -1,5 +1,3 @@
-/* TODO: Style it */
-
 .mobile-menu {
     display: none;
     position: fixed;
@@ -69,22 +67,14 @@
 }
 
 @media (min-width: 40rem) {
-    .container {
-        max-width: 40rem;
-    }
-
-    /* Header Section */
-    .header {
-        padding: 40px 88px;
-    }
     .logo img {
         height: 1.2rem;
     }
+
     .menu-toggle img {
         height: 3rem;
     }
 
-    /* Mobile Menu */
     .mobile-menu__links {
         font-size: var(--fs-base);
     }

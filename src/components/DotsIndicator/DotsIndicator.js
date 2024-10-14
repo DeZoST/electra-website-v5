@@ -3,7 +3,6 @@ export function loadDotsIndicator(pageType, sectionCount) {
     dotsContainer.className = "scroll-indicators";
 
     if (pageType === "home") {
-        // Home page indicators
         dotsContainer.innerHTML = `
             <div class="indicator" data-target="#home"></div>
         `;
@@ -16,7 +15,6 @@ export function loadDotsIndicator(pageType, sectionCount) {
             <div class="indicator" data-target="#reps"></div>
         `;
     } else if (pageType === "director") {
-        // Director page indicators
         for (let i = 1; i <= sectionCount; i++) {
             dotsContainer.innerHTML += `<div class="indicator" data-target="#featured-work-0${i}"></div>`;
         }

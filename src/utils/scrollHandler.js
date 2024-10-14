@@ -3,21 +3,11 @@ import { initTouchHandler } from "./touchHandler.js";
 
 let scrollDisabled = false;
 
-/**
- * Controls the disabling of scrolling.
- *
- * @param {boolean} disabled - Whether scrolling should be disabled.
- */
 export const setScrollDisabled = (disabled, context = "Unknown") => {
     scrollDisabled = disabled;
     console.log(`Scroll Disabled set to: ${scrollDisabled} by ${context}`);
 };
 
-/**
- * Initializes the scroll handler for detecting scroll events and transitioning between sections.
- *
- * @param {NodeListOf<Element>} sections - A list of sections to scroll between.
- */
 export const initScrollHandler = (sections) => {
     let currentSectionIndex = 0;
     let isScrolling = false;

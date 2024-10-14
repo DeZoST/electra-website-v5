@@ -1,5 +1,3 @@
-// src/components/Header/Header.js
-
 export function loadHeader() {
     const header = document.createElement("header");
     header.className = "header";
@@ -21,5 +19,4 @@ export function loadHeader() {
     document.body.insertAdjacentElement("afterbegin", header);
 }
 
-// Import CSS
 import "./Header.css";

@@ -1,5 +1,3 @@
-// src/components/FeaturedWork/FeaturedWork.js
-
 import { initScrollHandler } from "../../utils/scrollHandler.js";
 
 export function initProjectSections(jsonFilePath, sectionPrefix) {
@@ -9,7 +7,6 @@ export function initProjectSections(jsonFilePath, sectionPrefix) {
             const pageType = document.body.getAttribute("data-type");
             const aboutSection = document.querySelector("#about");
 
-            // Retrieve the projects for the specified director (or "home" section)
             const projects = data[sectionPrefix];
 
             if (!projects) {
