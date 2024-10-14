@@ -1,6 +1,9 @@
 import domReady from "./utils/domReady.js";
 
 import "./styles/style.css";
+import "./styles/components/about.css";
+import "./styles/components/team.css";
+import "./styles/components/reps.css";
 import "./styles/modern-normalize.css";
 
 import { loadHeader } from "./components/Header/Header.js";
