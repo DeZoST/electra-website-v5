@@ -16,6 +16,10 @@
     transition: transform 0.2s ease;
 }
 
+.logo {
+    padding: 1rem 0;
+}
+
 .logo img {
     height: 0.8rem;
 }
