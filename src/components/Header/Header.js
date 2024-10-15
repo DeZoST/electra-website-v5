@@ -2,7 +2,7 @@ export function loadHeader() {
     const header = document.createElement("header");
     header.className = "header";
     header.innerHTML = `
-        <a href="#home" class="logo">
+        <a href="/electra-website-v5/" class="logo">
             <img src="/electra-website-v5/assets/images/Electra_Orange.webp" alt="Electra Logo" loading="lazy" />
         </a>
         <nav class="nav-menu">
