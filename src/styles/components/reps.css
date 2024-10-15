@@ -1,22 +1,17 @@
-.reps__wrapper,
+.reps__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+    justify-items: center;
+}
+
 .reps__container {
     display: flex;
-}
-
-.reps__wrapper {
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    width: 90%;
-    padding: 0 1rem;
-}
-
-.reps__container {
     flex-direction: column;
-    width: fit-content;
-    flex-basis: 35%;
-    flex-grow: 1;
+    width: 100%;
+    align-items: center;
+    text-align: center;
 }
 
 .reps__section__image,
