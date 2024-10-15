@@ -3,7 +3,7 @@ import { initTouchHandler } from "./touchHandler.js";
 
 let scrollDisabled = false;
 
-export const setScrollDisabled = (disabled, context = "Unknown") => {
+export const setScrollDisabled = (disabled) => {
     scrollDisabled = disabled;
 };
 
