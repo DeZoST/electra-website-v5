@@ -80,24 +80,87 @@
         {
             "id": "featured-work-01",
             "video": {
-                "playbackId": "XdvyCtxC01GgLyKOlSNmhitkhmZgk9L402S6DQPf7bonY",
-                "thumbnail": "/electra-website-v5/assets/images/Ford_Bronco_DUST_IS_GOLD_thumbnail.webp",
-                "alt": "Ford Bronco DUST IS GOLD thumbnail"
+                "playbackId": "c7q4aa5CsjlVvSntUpvYmce8FJbcCxuC7JB008EH02EE8",
+                "thumbnail": "/electra-website-v5/assets/images/bw_Tax_Act_THE_CASE_30sec_thumbnail.webp",
+                "alt": "Tax Act THE CASE thumbnail"
             },
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
-                "name": "Ze'ev Waismann",
+                "name": "The Case",
                 "type": "Commercial",
-                "company": "Ford"
+                "company": "Tax Act"
             }
         },
         {
             "id": "featured-work-02",
             "video": {
+                "playbackId": "vjUEop5kHYy4kXwlLn5bBHl00THd1Roo5ZF9RwVOkU6I",
+                "thumbnail": "/electra-website-v5/assets/images/bw_Geico_BOY_BAND_30sec_thumbnail.webp",
+                "alt": "Geico BOY BAND thumbnail"
+            },
+            "details": {
+                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "iconAlt": "Solo Star Orange",
+                "name": "Boy Band",
+                "type": "Commercial",
+                "company": "GEICO"
+            }
+        },
+        {
+            "id": "featured-work-03",
+            "video": {
+                "playbackId": "h6Mu2s97UzM3tccE1jY5WLf00XTi9ooQaZGVRtq83X3o",
+                "thumbnail": "/electra-website-v5/assets/images/bw_Subway_IN_THE_KNOW_30sec_thumbnail.webp",
+                "alt": "Subway IN THE KNOW Thumbnail"
+            },
+            "details": {
+                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "iconAlt": "Solo Star Orange",
+                "name": "In The Know",
+                "type": "Commercial",
+                "company": "Subway"
+            }
+        },
+        {
+            "id": "featured-work-04",
+            "video": {
+                "playbackId": "u4ibXl9eAwikjblp8UTSS3k7clj875vAgqnXC8F8zCQ",
+                "thumbnail": "/electra-website-v5/assets/images/bw_Tylenol_TOUCHDOWN_30sec_thumbnail.webp",
+                "alt": "Tylenol TOUCHDOWN Thumbnail"
+            },
+            "details": {
+                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "iconAlt": "Solo Star Orange",
+                "name": "Touchdown",
+                "type": "Commercial",
+                "company": "Tylenol"
+            }
+        },
+        {
+            "id": "featured-work-05",
+            "video": {
+                "playbackId": "PT02ecDeoihLhjtMD01YvEsVdJA1GAwWaWvAWUSHgMwlo",
+                "thumbnail": "/electra-website-v5/assets/images/bw_Thursday_Night_Football_SWEET_THURSDAY_30sec_thumbnail.webp",
+                "alt": "Thursday Night Football SWEET THURSDAY Thumbnail"
+            },
+            "details": {
+                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "iconAlt": "Solo Star Orange",
+                "name": "Sweet Thursday",
+                "type": "Commercial",
+                "company": "Thursday Night Football"
+            }
+        }
+    ],
+
+    "Kailee": [
+        {
+            "id": "featured-work-01",
+            "video": {
                 "playbackId": "w4Zj3eeapaSmgtdnrQ2deB375YJN8RuPFr01W01paVwXk",
                 "thumbnail": "/electra-website-v5/assets/images/km_VRT_LETS_RIDE_BOI_30sec_thumbnail.webp",
-                "alt": "VRT LETS RIDE BOI 30sec thumbnail"
+                "alt": "VRT LETS RIDE BOI thumbnail"
             },
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
@@ -108,92 +171,63 @@
             }
         },
         {
-            "id": "featured-work-03",
-            "video": {
-                "playbackId": "mACdPBjc3T8h71wIIotEkstAQ5omVWgWCbbz101700drQ",
-                "thumbnail": "/electra-website-v5/assets/images/ld_3m_SEE_ME_60sec_thumbnail.webp",
-                "alt": "3M SEE ME 60sec thumbnail"
-            },
-            "details": {
-                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
-                "iconAlt": "Solo Star Orange",
-                "name": "Lorenzo De Guia",
-                "type": "Commercial",
-                "company": "3M"
-            }
-        },
-        {
-            "id": "featured-work-04",
-            "video": {
-                "playbackId": "SomePlaybackID",
-                "thumbnail": "/electra-website-v5/assets/images/ag_Ford_NFL_SUPER_FAN_90sec_thumbnail.webp",
-                "alt": "Ford NFL SUPER FAN 90sec thumbnail"
-            },
-            "details": {
-                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
-                "iconAlt": "Solo Star Orange",
-                "name": "Anthony Garth",
-                "type": "Commercial"
-            }
-        }
-    ],
-    "Kailee": [
-        {
-            "id": "featured-work-01",
-            "video": {
-                "playbackId": "XdvyCtxC01GgLyKOlSNmhitkhmZgk9L402S6DQPf7bonY",
-                "thumbnail": "/electra-website-v5/assets/images/Ford_Bronco_DUST_IS_GOLD_thumbnail.webp",
-                "alt": "Ford Bronco DUST IS GOLD thumbnail"
-            },
-            "details": {
-                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
-                "iconAlt": "Solo Star Orange",
-                "name": "Ze'ev Waismann",
-                "type": "Commercial",
-                "company": "Ford"
-            }
-        },
-        {
             "id": "featured-work-02",
             "video": {
-                "playbackId": "w4Zj3eeapaSmgtdnrQ2deB375YJN8RuPFr01W01paVwXk",
-                "thumbnail": "/electra-website-v5/assets/images/km_VRT_LETS_RIDE_BOI_30sec_thumbnail.webp",
-                "alt": "VRT LETS RIDE BOI 30sec thumbnail"
+                "playbackId": "mnVHlYW01VinipcAluYEEhoykGgs02lOS3uj9egi01HhQs",
+                "thumbnail": "/electra-website-v5/assets/images/km_Zazzle_OBSESSED_30sec_thumbnail.webp",
+                "alt": "Zazzle OBSESSED Thumbnail"
             },
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
-                "name": "Kailee McGee",
-                "type": "Commercial"
+                "name": "Obsessed",
+                "type": "Commercial",
+                "company": "Zazzle"
             }
         },
         {
             "id": "featured-work-03",
             "video": {
-                "playbackId": "mACdPBjc3T8h71wIIotEkstAQ5omVWgWCbbz101700drQ",
-                "thumbnail": "/electra-website-v5/assets/images/ld_3m_SEE_ME_60sec_thumbnail.webp",
-                "alt": "3M SEE ME 60sec thumbnail"
+                "playbackId": "H5IRtUxkIkszm4A6DH9iL6NDVFfWzNp6x01dQeMtYK004",
+                "thumbnail": "/electra-website-v5/assets/images/km_McGraw_Hill_SHARPEN_90sec_thumbnail.webp",
+                "alt": "McGraw Hill SHARPEN thumbnail"
             },
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
-                "name": "Lorenzo De Guia",
-                "type": "Commercial"
+                "name": "Sharpen",
+                "type": "Commercial",
+                "company": "McGraw Hill"
             }
         },
         {
             "id": "featured-work-04",
             "video": {
-                "playbackId": "SomePlaybackID",
-                "thumbnail": "/electra-website-v5/assets/images/ag_Ford_NFL_SUPER_FAN_90sec_thumbnail.webp",
-                "alt": "Ford NFL SUPER FAN 90sec thumbnail"
+                "playbackId": "t9YXnNS00f5SNgBIAMHNu9m2WLLqNWllq7vCeXu66HbY",
+                "thumbnail": "/electra-website-v5/assets/images/km_Flip_SHOPPING_REINVENTED_thumbnail.webp",
+                "alt": "Flip SHOPPING REINVENTED Thumbnail"
             },
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
-                "name": "Anthony Garth",
+                "name": "Shopping Reinvented",
                 "type": "Commercial",
-                "company": "Ford | NFL"
+                "company": "Flip"
+            }
+        },
+        {
+            "id": "featured-work-05",
+            "video": {
+                "playbackId": "IoIExf01McLkZcPHgikJBQ5PGN6RH2ESOUG028qFvKwoU",
+                "thumbnail": "/electra-website-v5/assets/images/km_Yacht_Music_MY_IDEA_mv_thumbnail.webp",
+                "alt": "Yacht MY IDEA thumbnail"
+            },
+            "details": {
+                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "iconAlt": "Solo Star Orange",
+                "name": "My Idea",
+                "type": "Music Video",
+                "company": "Yacht"
             }
         }
     ],
@@ -201,61 +235,76 @@
         {
             "id": "featured-work-01",
             "video": {
-                "playbackId": "XdvyCtxC01GgLyKOlSNmhitkhmZgk9L402S6DQPf7bonY",
-                "thumbnail": "/electra-website-v5/assets/images/Ford_Bronco_DUST_IS_GOLD_thumbnail.webp",
-                "alt": "Ford Bronco DUST IS GOLD thumbnail"
-            },
-            "details": {
-                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
-                "iconAlt": "Solo Star Orange",
-                "name": "Ze'ev Waismann",
-                "type": "Commercial",
-                "company": "Ford"
-            }
-        },
-        {
-            "id": "featured-work-02",
-            "video": {
-                "playbackId": "w4Zj3eeapaSmgtdnrQ2deB375YJN8RuPFr01W01paVwXk",
-                "thumbnail": "/electra-website-v5/assets/images/km_VRT_LETS_RIDE_BOI_30sec_thumbnail.webp",
-                "alt": "VRT LETS RIDE BOI 30sec thumbnail"
-            },
-            "details": {
-                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
-                "iconAlt": "Solo Star Orange",
-                "name": "Kailee McGee",
-                "type": "Commercial",
-                "company": "VRT"
-            }
-        },
-        {
-            "id": "featured-work-03",
-            "video": {
                 "playbackId": "mACdPBjc3T8h71wIIotEkstAQ5omVWgWCbbz101700drQ",
                 "thumbnail": "/electra-website-v5/assets/images/ld_3m_SEE_ME_60sec_thumbnail.webp",
-                "alt": "3M SEE ME 60sec thumbnail"
+                "alt": "3M SEE ME thumbnail"
             },
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
-                "name": "Lorenzo De Guia",
+                "name": "See Me",
                 "type": "Commercial",
                 "company": "3M"
             }
         },
         {
-            "id": "featured-work-04",
+            "id": "featured-work-02",
             "video": {
-                "playbackId": "SomePlaybackID",
-                "thumbnail": "/electra-website-v5/assets/images/ag_Ford_NFL_SUPER_FAN_90sec_thumbnail.webp",
-                "alt": "Ford NFL SUPER FAN 90sec thumbnail"
+                "playbackId": "3yGyTG37eZC01fcMl2nx029T6OjrRp7VkvoRwThc500REs",
+                "thumbnail": "/electra-website-v5/assets/images/ld_BMW_THE_AGILITY_OF_M_30sec_thumbnail.webp",
+                "alt": "BMW THE AGILITY OF M thumbnail"
             },
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
-                "name": "Anthony Garth",
+                "name": "The Agility of M",
                 "type": "Commercial",
-                "company": "Ford | NFL"
+                "company": "BMW"
+            }
+        },
+        {
+            "id": "featured-work-03",
+            "video": {
+                "playbackId": "PBWM3902afmrZ1A01EJHmgrmyB4tFcIcnqxqWdJ01IptyM",
+                "thumbnail": "/electra-website-v5/assets/images/ld_Ford_LEGACY_30sec_thumbnail.webp",
+                "alt": "Ford LEGACY thumbnail"
+            },
+            "details": {
+                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "iconAlt": "Solo Star Orange",
+                "name": "Legacy",
+                "type": "Commercial",
+                "company": "Ford"
+            }
+        },
+        {
+            "id": "featured-work-04",
+            "video": {
+                "playbackId": "VBwJ5TA00Ob2iOYXRnmoqJKq502SXO02TG5OqqpCQNOx3s",
+                "thumbnail": "/electra-website-v5/assets/images/ld_NHL_THANK_YOU_HOCKEY_90sec_thumbnail.webp",
+                "alt": "NHL THANK YOU HOCKEY thumbnail"
+            },
+            "details": {
+                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "iconAlt": "Solo Star Orange",
+                "name": "Thank You Hockey",
+                "type": "Commercial",
+                "company": "NHL"
+            }
+        },
+        {
+            "id": "featured-work-05",
+            "video": {
+                "playbackId": "gbylM1LZh1C00o7u5H33i2GGtG5L3M00PpCUGY6JdWKyc",
+                "thumbnail": "/electra-website-v5/assets/images/ld_Nike_GET_GONE_30sec_thumbnail.webp",
+                "alt": "Nike GET GONE thumbnail"
+            },
+            "details": {
+                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "iconAlt": "Solo Star Orange",
+                "name": "Get Gone",
+                "type": "Commercial",
+                "company": "Nike"
             }
         }
     ],
@@ -265,7 +314,7 @@
             "video": {
                 "playbackId": "XdvyCtxC01GgLyKOlSNmhitkhmZgk9L402S6DQPf7bonY",
                 "thumbnail": "/electra-website-v5/assets/images/Ford_Bronco_DUST_IS_GOLD_thumbnail.webp",
-                "alt": "Ford Bronco DUST IS GOLD thumbnail"
+                "alt": "Ford DUST IS GOLD Thumbnail"
             },
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
@@ -278,46 +327,31 @@
         {
             "id": "featured-work-02",
             "video": {
-                "playbackId": "w4Zj3eeapaSmgtdnrQ2deB375YJN8RuPFr01W01paVwXk",
-                "thumbnail": "/electra-website-v5/assets/images/km_VRT_LETS_RIDE_BOI_30sec_thumbnail.webp",
-                "alt": "VRT LETS RIDE BOI 30sec thumbnail"
+                "playbackId": null,
+                "thumbnail": "/electra-website-v5/assets/images/zw_Kelly_TEMPORARY_IS_BEAUTIFUL_60sec_thumbnail.webp",
+                "alt": "Experience Scottsdale SUNGLOBE Thumbnail"
             },
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
-                "name": "Kailee McGee",
+                "name": "Temporary Is Beautiful",
                 "type": "Commercial",
-                "company": "VRT"
+                "company": "Experience Scottsdale"
             }
         },
         {
             "id": "featured-work-03",
             "video": {
-                "playbackId": "mACdPBjc3T8h71wIIotEkstAQ5omVWgWCbbz101700drQ",
-                "thumbnail": "/electra-website-v5/assets/images/ld_3m_SEE_ME_60sec_thumbnail.webp",
-                "alt": "3M SEE ME 60sec thumbnail"
+                "playbackId": "7ZQehp7SlbrHBy4HT1J01d9fTfaD7e5BOGvmfgwLPgL4",
+                "thumbnail": "/electra-website-v5/assets/images/zw_Geisinger_WHAT_MAKES_US_60sec_thumbnail.webp",
+                "alt": "Geisinger WHAT MAKES US Thumbnail"
             },
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
-                "name": "Lorenzo De Guia",
+                "name": "What Makes Us",
                 "type": "Commercial",
-                "company": "3M"
-            }
-        },
-        {
-            "id": "featured-work-04",
-            "video": {
-                "playbackId": "SomePlaybackID",
-                "thumbnail": "/electra-website-v5/assets/images/ag_Ford_NFL_SUPER_FAN_90sec_thumbnail.webp",
-                "alt": "Ford NFL SUPER FAN 90sec thumbnail"
-            },
-            "details": {
-                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
-                "iconAlt": "Solo Star Orange",
-                "name": "Anthony Garth",
-                "type": "Commercial",
-                "company": "Ford | NFL"
+                "company": "Geisinger"
             }
         }
     ]
