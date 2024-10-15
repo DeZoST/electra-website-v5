@@ -27,6 +27,10 @@ export function initProjectSections(jsonFilePath, sectionPrefix) {
                         ? `<a class="featured__project__link" href="${project.details.link}">${project.details.linkText}</a>`
                         : "";
 
+                const titleHTML = project.details.title
+                    ? `<h3 class="featured__project__title">${project.details.title}</h3>`
+                    : "";
+
                 section.innerHTML = `
                     <div class="featured__project__container">
                         <h4 class="featured__project__text">Featured Projects</h4>
@@ -43,7 +47,7 @@ export function initProjectSections(jsonFilePath, sectionPrefix) {
                                 </div>
                                 <div class="featured__project__details">
                                     <h3 class="featured__project__company">${project.details.company}</h3>
-                                    <h3 class="featured__project__title">${project.details.title}</h3>
+                                    ${titleHTML}
                                 </div>
                                 ${linkHTML}
                             </div>
