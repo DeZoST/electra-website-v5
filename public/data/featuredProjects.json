@@ -15,7 +15,7 @@
                 "type": "Commercial",
                 "company": "Ford",
                 "title": "Dust is Gold",
-                "link": "#home",
+                "link": "/electra-website-v5/pages/zeev/index.html",
                 "linkText": "More from Ze'ev"
             }
         },
@@ -34,7 +34,7 @@
                 "type": "Commercial",
                 "company": "VRT",
                 "title": "Let's Ride Boi",
-                "link": "#home",
+                "link": "/electra-website-v5/pages/kailee/index.html",
                 "linkText": "More from Kailee"
             }
         },
@@ -53,7 +53,7 @@
                 "type": "Commercial",
                 "company": "3M",
                 "title": "See Me",
-                "link": "#home",
+                "link": "/electra-website-v5/pages/lorenzo/index.html",
                 "linkText": "More from Lorenzo"
             }
         },
@@ -72,7 +72,7 @@
                 "type": "Commercial",
                 "company": "Ford | NFL",
                 "title": "Superfan",
-                "link": "#home",
+                "link": "/electra-website-v5/pages/anthony/index.html",
                 "linkText": "More from Anthony"
             }
         }
