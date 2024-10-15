@@ -46,7 +46,7 @@ export function initProjectSections(jsonFilePath, sectionPrefix) {
                                     <h4 class="featured__project__type">${project.details.type}</h4>
                                 </div>
                                 <div class="featured__project__details">
-                                    <h3 class="featured__project__company">${project.details.company}</h3>
+                                    <h3 class="featured__project__title">${project.details.company}</h3>
                                     ${titleHTML}
                                 </div>
                                 ${linkHTML}
