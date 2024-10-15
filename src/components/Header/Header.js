@@ -1,11 +1,13 @@
 export function loadHeader() {
     const header = document.createElement("header");
     header.className = "header";
+    header.role = "banner";
+    header.ariaLabel = "Header";
     header.innerHTML = `
         <a href="/electra-website-v5/" class="logo">
             <img src="/electra-website-v5/assets/images/Electra_Orange.webp" alt="Electra Logo" loading="lazy" />
         </a>
-        <nav class="nav-menu">
+        <nav class="nav-menu" aria-label="Main Navigation Menu">
             <ul class="nav__links">
                 <li class="nav__link"><a href="#home">Directors</a></li>
                 <li class="nav__link"><a href="#about">About</a></li>

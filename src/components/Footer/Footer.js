@@ -1,6 +1,6 @@
 export function loadFooter() {
     const footerHTML = `
-        <footer class="footer">
+        <footer class="footer" role="contentinfo" aria-label="Footer">
             <img class="footer__logo" src="/electra-website-v5/assets/images/Electra_White.webp" alt="Electra Logo" loading="lazy" />
             <ul class="footer_socials_wrapper">
                 <li><a class="footer_social" target="_blank" href="https://www.instagram.com/electrafilmworks/" aria-label="Instagram">

@@ -30,8 +30,14 @@ export const initMobileMenu = () => {
 
         if (isOpen) {
             mobileMenu.style.display = "flex";
+            menuToggle.ariaExpanded = "true";
+            mobileMenu.ariaHidden = "false";
+            mobileMenu.querySelector("a").focus();
         } else {
             mobileMenu.style.display = "none";
+            menuToggle.ariaExpanded = "false";
+            mobileMenu.ariaHidden = "true";
+            menuToggle.focus();
         }
     };
 

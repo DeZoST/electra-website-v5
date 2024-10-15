@@ -30,17 +30,20 @@ export function initializeVideoModal() {
 
             const playbackId = container.dataset.playbackId;
             muxPlayer.setAttribute("playback-id", playbackId);
-
             modal.querySelector(".modal-content").appendChild(muxPlayer);
+
+            modal.style.display = "flex";
+            allContent.classList.add("blur-background");
+
+            document.body.setAttribute("aria-hidden", "true");
+            modal.setAttribute("aria-hidden", "false");
+            muxPlayer.focus();
 
             muxPlayer.addEventListener("loadeddata", () => {
                 muxPlayer.play().catch((error) => {
                     console.warn("Video playback failed:", error);
                 });
             });
-
-            modal.style.display = "flex";
-            allContent.classList.add("blur-background");
         }, 100);
     };
 
@@ -49,6 +52,10 @@ export function initializeVideoModal() {
 
         modal.style.display = "none";
         allContent.classList.remove("blur-background");
+
+        document.body.removeAttribute("aria-hidden");
+        modal.setAttribute("aria-hidden", "true");
+        document.querySelector(".featured__project__video").focus();
 
         if (muxPlayer && typeof muxPlayer.pause === "function") {
             muxPlayer.pause();
