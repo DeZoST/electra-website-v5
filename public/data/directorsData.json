@@ -1,0 +1,29 @@
+{
+    "directors": {
+        "Ze'ev Waismann": {
+            "name": "Ze'ev Waismann",
+            "photo": "/electra-website-v5/assets/images/zwaismann_bio_photo.webp",
+            "description": "Ze’ev Waismann is a highly accomplished director and cinematographer with a passion for creating purposeful films that evoke powerful emotions. With a hands-on approach, Ze’ev has directed and shot visually stunning branded content and commercial work for a variety of major clients, including Nike, Adidas, Reebok, Dodge, Chevrolet, Mini Cooper, Blue Cross Blue Shield, Gerber, and AT&T. His focus is always on creating compelling content with engaging narratives and striking visuals. Born in Rio de Janeiro and raised between Brazil and Israel, Ze’ev holds a Master’s degree in Film from the USC School of Cinematic Arts and a Bachelor’s degree from the London School of Economics. "
+        },
+        "Anthony Garth": {
+            "name": "Anthony Garth",
+            "photo": "/electra-website-v5/assets/images/ag_bio_photo.webp",
+            "description": "Born in Detroit, Anthony Garth discovered a love for directing early in life. While studying photography & architecture in college, saw an opportunity to combine these passions for the visual form by becoming a director. Anthony quickly began helming music videos for the White Stripes, Eminem, Von Bondies, D12, and Jim Jones among others. His debut spot for Chevy, featuring a Hip Hop sensibility established his signature style & tone, an ability to construct unique, unexpected narratives with a distinct eye for the passing, but beautiful detail. His spots “Born of Choir” and “Pure Michigan” have won numerous awards for clients such as McCann Erickson & Doner. He has worked extensively with a long list of international brands including Cole Haan, Harley Davidson, Chevrolet, Ford, Lincoln, Dassault, GM, Varvatos, JEEP & many others. "
+        },
+        "Kailee McGee": {
+            "name": "Kailee McGee",
+            "photo": "/electra-website-v5/assets/images/km_bio_photo.webp",
+            "description": "Kailee McGee is a celebrated creator who excels in various forms of artistry, including filmmaking and writing. She is known for her distinctive approach that intertwines the realms of reality and fiction, and life and art. Her noteworthy project in 2019, The Person I Am When No One Is Looking, where she played multiple roles as a writer, director, and actor, garnered widespread appreciation. Kailee’s diverse portfolio comprises numerous music videos, short films, commercials, and digital media pieces, along with two full-length feature films. In 2022, her visionary talents were recognized when she was chosen as a filmmaker for the prestigious Tribeca Creators Market. Her latest cinematic venture, The Idea of a You, made its debut on NOWNESS in the summer. Kailee currently resides in Los Angeles, California, after being brought up in the idyllic surroundings of Laguna Beach, California. She’s a proud alumna of NYU’s Tisch School of the Arts. "
+        },
+        "Ben Weinstein": {
+            "name": "Ben Weinstein",
+            "photo": "/electra-website-v5/assets/images/bw_bio_photo.webp",
+            "description": "Even before he became a teenager, Ben Weinstein was creating comedic content with a VHS camcorder he borrowed from his cousin. Later, his academic journey led him to Cornell University, where he left with mediocre GPA and a profound love for filmmaking. Ben then found himself behind the camera for a string of indie movie projects, including the notable Wet Hot American Summer, starring Bradley Cooper. From there, he steered his career towards directing sketch comedy, creating engaging videos for renowned platforms like Comedy Central, IFC, FunnyOrDie, College Humor, and the Upright Citizens Brigade Theatre. This body of work naturally transitioned him into the realm of commercial production, shooting advertisements for big-name brands such as Geico. Bud Light. Subway, Kit Kat, Crest, among others. Ben calls Bushwick his home. cohabitating with 11 houseplants. In his humble opinion, some are doing quite splendidly. "
+        },
+        "Lorenzo De Guia": {
+            "name": "Lorenzo De Guia",
+            "photo": "/electra-website-v5/assets/images/ld_bio_photo.webp",
+            "description": "Lorenzo is a Filipino-American writer and film director, originally from Southern California, now based out of Brooklyn and Los Angeles. By adopting a story-first approach, Lorenzo has built bold, emotional, and visually rich narratives filled with humanity and heart. Each world he crafts is imbued with realism, fostering a deep sense of empathy for the story. Ultimately, his goal is to create something that everyone involved is proud to have been a part of. He has worked with a wide range of clients including 3M, Nike, the NHL, General Mills, BMW, Goldman Sachs, as well as celebrities and athletes like LeBron James, Steph Curry, Mark Ronson, and more. "
+        }
+    }
+}

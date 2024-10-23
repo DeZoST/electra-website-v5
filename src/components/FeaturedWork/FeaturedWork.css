@@ -20,7 +20,7 @@
 }
 
 .featured__project__thumbnail {
-    max-width: 250px;
+    width: 250px;
     object-fit: cover;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
@@ -58,12 +58,19 @@
     margin-bottom: 1rem;
 }
 
-.featured__project__name {
+.featured__project__director-name {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.featured__project__name,
+.featured__project__director-name {
     font-size: var(--fs-xl);
     text-transform: capitalize;
 }
 
-.featured__project__type {
+.featured__project__type,
+.featured__project__role {
     margin-top: 0.5rem;
     font-size: var(--fs-xxs);
     color: var(--clr-dark-orange);
@@ -107,13 +114,15 @@
 .featured__project__details__container,
 .featured__project__video img,
 .featured__project__details__container,
-.featured__project__link {
+.featured__project__link,
+.featured__project__role {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.featured__project__container h4 {
+.featured__project__container h4,
+.featured__project__role {
     transition-delay: 0.1s;
 }
 
@@ -144,7 +153,8 @@
 .section-visible
     .featured__project__details__container
     .featured__project__details,
-.section-visible .featured__project__link {
+.section-visible .featured__project__link,
+.section-visible .featured__project__role {
     opacity: 1;
     transform: translateY(0);
 }
@@ -152,12 +162,13 @@
 /* XS */
 @media (min-width: 29.6875rem) {
     .featured__project__thumbnail {
-        max-width: 400px;
+        width: 400px;
     }
     .featured__project__text,
     .featured__project__company,
     .featured__project__link,
-    .featured__project__type {
+    .featured__project__type,
+    .featured__project__role {
         font-size: var(--fs-xs);
     }
     .featured__project__title {
@@ -168,13 +179,15 @@
 /* SM */
 @media (min-width: 40rem) {
     .featured__project__thumbnail {
-        max-width: 500px;
+        width: 500px;
     }
     .featured__project__name,
-    .featured__project__title {
+    .featured__project__title,
+    .featured__project__director-name {
         font-size: var(--fs-2xl);
     }
-    .featured__project__type {
+    .featured__project__type,
+    .featured__project__role {
         font-size: var(--fs-sm);
     }
     .featured__project__company,
@@ -198,10 +211,12 @@
         margin-top: 0;
     }
     .featured__project__name,
-    .featured__project__title {
+    .featured__project__title,
+    .featured__project__director-name {
         font-size: var(--fs-base);
     }
     .featured__project__type,
+    .featured__project__role,
     .featured__project__company,
     .featured__project__link,
     .featured__project__text {
@@ -218,12 +233,14 @@
         gap: 3rem;
     }
     .featured__project__thumbnail {
-        max-width: 650px;
+        width: 650px;
     }
-    .featured__project__name {
+    .featured__project__name,
+    .featured__project__director-name {
         font-size: var(--fs-2xl);
     }
     .featured__project__type,
+    .featured__project__role,
     .featured__project__company,
     .featured__project__link,
     .featured__project__text {
@@ -237,12 +254,14 @@
 /* XL */
 @media (min-width: 80rem) {
     .featured__project__thumbnail {
-        max-width: 800px;
+        width: 800px;
     }
-    .featured__project__name {
+    .featured__project__name,
+    .featured__project__director-name {
         font-size: var(--fs-4xl);
     }
     .featured__project__type,
+    .featured__project__role,
     .featured__project__company,
     .featured__project__link,
     .featured__project__text {

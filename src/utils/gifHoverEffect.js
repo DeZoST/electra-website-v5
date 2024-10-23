@@ -69,6 +69,7 @@ function preloadMuxPlayers() {
         muxPlayer.setAttribute("disable-cookies", "true");
         muxPlayer.setAttribute("playsinline", "true");
         muxPlayer.setAttribute("playback-id", playbackId);
+        muxPlayer.setAttribute("no-analytics", "true");
 
         muxPlayer.style.width = "100%";
         muxPlayer.style.height = "100%";

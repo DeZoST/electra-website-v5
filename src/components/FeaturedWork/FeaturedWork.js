@@ -1,21 +1,28 @@
-import { initScrollHandler } from "../../utils/scrollHandler.js";
-
-export function initProjectSections(jsonFilePath, sectionPrefix) {
+export function initProjectSections(jsonFilePath, sectionPrefix, callback) {
     fetch(jsonFilePath)
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Erreur réseau lors du chargement des projets");
+            }
+            return response.json();
+        })
         .then((data) => {
             const pageType = document.body.getAttribute("data-type");
-            const aboutSection = document.querySelector("#about");
-
+            const homeSection = document.querySelector(".home");
+            const mainElement = document.querySelector("main");
             const projects = data[sectionPrefix];
 
             if (!projects) {
                 console.error(
-                    "No projects found for this section:",
+                    "Aucun projet trouvé pour cette section:",
                     sectionPrefix
                 );
                 return;
             }
+
+            const directorName = sectionPrefix;
+
+            let lastInsertedSection = homeSection;
 
             projects.forEach((project) => {
                 const section = document.createElement("section");
@@ -31,13 +38,20 @@ export function initProjectSections(jsonFilePath, sectionPrefix) {
                     ? `<h3 class="featured__project__title">${project.details.title}</h3>`
                     : "";
 
+                const textHTML =
+                    pageType === "director"
+                        ? `
+                        <h5 class='featured__project__role'>Director</h5>
+                        <h4 class='featured__project__director-name'>${directorName}</h4>
+                    `
+                        : "<h4 class='featured__project__text'>Featured Projects</h4>";
+
                 section.innerHTML = `
                     <div class="featured__project__container">
-                        <h4 class="featured__project__text">Featured Projects</h4>
+                        ${textHTML}
                         <div class="featured__project__wrapper">
                             <div class="featured__project__video" data-playback-id="${project.video.playbackId}">
                                 <img class="featured__project__thumbnail" src="${project.video.thumbnail}" alt="${project.video.alt}" loading="lazy" />
-                                
                             </div>
                             <div class="featured__project__details__container">
                                 <img src="${project.details.icon}" alt="${project.details.iconAlt}" loading="eager" class="featured__project__svg" />
@@ -52,16 +66,28 @@ export function initProjectSections(jsonFilePath, sectionPrefix) {
                                 ${linkHTML}
                             </div>
                         </div>
+                        <lord-icon class="scroll-down-line" src="https://cdn.lordicon.com/ksmzzfxc.json" trigger="loop" stroke="bold" state="loop-slide" colors="primary:#ff4e00,secondary:#ef9622"></lord-icon>
                     </div>
                 `;
 
-                aboutSection.insertAdjacentElement("beforebegin", section);
+                if (pageType === "home" && homeSection && mainElement) {
+                    lastInsertedSection.insertAdjacentElement(
+                        "afterend",
+                        section
+                    );
+                    lastInsertedSection = section;
+                } else if (mainElement) {
+                    mainElement.appendChild(section);
+                }
             });
 
-            const sections = document.querySelectorAll("section");
-            initScrollHandler(sections);
+            if (callback) {
+                callback();
+            }
         })
-        .catch((error) => console.error("Error loading projects:", error));
+        .catch((error) =>
+            console.error("Erreur lors du chargement des projets :", error)
+        );
 }
 
 import "./FeaturedWork.css";

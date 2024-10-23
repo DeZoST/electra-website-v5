@@ -27,6 +27,7 @@ export function initializeVideoModal() {
             muxPlayer.setAttribute("disable-cookies", "");
             muxPlayer.setAttribute("autoplay", "");
             muxPlayer.setAttribute("controls", "");
+            muxPlayer.setAttribute("no-analytics", "true");
 
             const playbackId = container.dataset.playbackId;
             muxPlayer.setAttribute("playback-id", playbackId);

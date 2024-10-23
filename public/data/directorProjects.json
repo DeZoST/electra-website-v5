@@ -1,5 +1,5 @@
 {
-    "Anthony": [
+    "Anthony Garth": [
         {
             "id": "featured-work-01",
             "video": {
@@ -76,7 +76,7 @@
             }
         }
     ],
-    "Ben": [
+    "Ben Weinstein": [
         {
             "id": "featured-work-01",
             "video": {
@@ -154,7 +154,7 @@
         }
     ],
 
-    "Kailee": [
+    "Kailee McGee": [
         {
             "id": "featured-work-01",
             "video": {
@@ -231,7 +231,7 @@
             }
         }
     ],
-    "Lorenzo": [
+    "Lorenzo De Guia": [
         {
             "id": "featured-work-01",
             "video": {
@@ -308,7 +308,7 @@
             }
         }
     ],
-    "Zeev": [
+    "Ze'ev Waismann": [
         {
             "id": "featured-work-01",
             "video": {
@@ -319,7 +319,7 @@
             "details": {
                 "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
-                "name": "Ze'ev Waismann",
+                "name": "Dust is Gold",
                 "type": "Commercial",
                 "company": "Ford"
             }
