@@ -30,8 +30,8 @@
 /* MD */
 @media (min-width: 48rem) {
     .indicator {
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 10px;
     }
     .scroll-indicators {
         right: 1.5rem;
@@ -41,8 +41,8 @@
 /* XL */
 @media (min-width: 80rem) {
     .indicator {
-        width: 10px;
-        height: 10px;
+        width: 15px;
+        height: 15px;
     }
     .scroll-indicators {
         right: 2rem;
