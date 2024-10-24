@@ -1,8 +1,9 @@
 export function loadHeader() {
     const header = document.createElement("header");
     header.className = "header";
-    header.role = "banner";
-    header.ariaLabel = "Header";
+    header.setAttribute("role", "banner");
+    header.setAttribute("aria-label", "Header");
+
     header.innerHTML = `
         <a href="/electra-website-v5/" class="logo">
             <img src="/electra-website-v5/assets/images/Electra_Orange.webp" alt="Electra Logo" loading="lazy" />
@@ -18,7 +19,14 @@ export function loadHeader() {
             </button>
         </nav>
     `;
-    document.body.insertAdjacentElement("afterbegin", header);
+
+    const bodyElement = document.body;
+    if (!bodyElement) {
+        console.error("Body element not found.");
+        return;
+    }
+
+    bodyElement.insertAdjacentElement("afterbegin", header);
 }
 
 import "./Header.css";

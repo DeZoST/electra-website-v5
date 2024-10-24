@@ -19,6 +19,11 @@ export function loadHomeSection(insertPosition) {
     `;
 
     const mainSection = document.querySelector("main");
+    if (!mainSection) {
+        console.error("Main section not found.");
+        return;
+    }
+
     if (insertPosition === "first") {
         mainSection.prepend(homeSection);
     } else {

@@ -1,8 +1,17 @@
 export const scrollToSection = (sectionIndex) => {
-    const main = document.querySelector("main");
-    const sectionHeight = window.innerHeight;
+    try {
+        const main = document.querySelector("main");
+        if (!main) {
+            throw new Error("Main element not found.");
+        }
 
-    window.requestAnimationFrame(() => {
-        main.style.transform = `translateY(-${sectionHeight * sectionIndex}px)`;
-    });
+        const sectionHeight = window.innerHeight;
+        window.requestAnimationFrame(() => {
+            main.style.transform = `translateY(-${
+                sectionHeight * sectionIndex
+            }px)`;
+        });
+    } catch (error) {
+        console.error("Error during scrollToSection: ", error);
+    }
 };

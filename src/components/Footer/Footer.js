@@ -15,12 +15,16 @@ export function loadFooter() {
     `;
 
     const mainSection = document.querySelector("main");
-    const lastSection = mainSection.querySelector("section:last-of-type");
+    if (!mainSection) {
+        console.error("Main section not found.");
+        return;
+    }
 
+    const lastSection = mainSection.querySelector("section:last-of-type");
     if (lastSection) {
         lastSection.insertAdjacentHTML("beforeend", footerHTML);
     } else {
-        console.error("No sections found in main");
+        console.error("No sections found in main.");
     }
 }
 

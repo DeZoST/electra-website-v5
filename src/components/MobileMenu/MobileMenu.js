@@ -4,6 +4,11 @@ import { scrollToSection } from "../../utils/scrollTransition.js";
 export const initMobileMenu = () => {
     const menuToggle = document.getElementById("menu-toggle");
 
+    if (!menuToggle) {
+        console.error("Menu toggle button not found.");
+        return;
+    }
+
     const mobileMenu = document.createElement("div");
     mobileMenu.classList.add("mobile-menu");
     mobileMenu.style.display = "none";
@@ -30,13 +35,13 @@ export const initMobileMenu = () => {
 
         if (isOpen) {
             mobileMenu.style.display = "flex";
-            menuToggle.ariaExpanded = "true";
-            mobileMenu.ariaHidden = "false";
+            menuToggle.setAttribute("aria-expanded", "true");
+            mobileMenu.setAttribute("aria-hidden", "false");
             mobileMenu.querySelector("a").focus();
         } else {
             mobileMenu.style.display = "none";
-            menuToggle.ariaExpanded = "false";
-            mobileMenu.ariaHidden = "true";
+            menuToggle.setAttribute("aria-expanded", "false");
+            mobileMenu.setAttribute("aria-hidden", "true");
             menuToggle.focus();
         }
     };
@@ -53,7 +58,11 @@ export const initMobileMenu = () => {
     manageMenuToggle();
 
     const closeButton = mobileMenu.querySelector(".mobile-menu__close");
-    closeButton.addEventListener("click", closeMenu);
+    if (closeButton) {
+        closeButton.addEventListener("click", closeMenu);
+    } else {
+        console.error("Close button not found.");
+    }
 
     const menuLinks = mobileMenu.querySelectorAll(".mobile-menu__link a");
     menuLinks.forEach((link) => {
@@ -69,6 +78,8 @@ export const initMobileMenu = () => {
 
                 scrollToSection(targetIndex);
                 closeMenu();
+            } else {
+                console.error(`Target section ${target} not found.`);
             }
         });
     });

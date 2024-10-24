@@ -15,88 +15,106 @@ import { initializeVideoModal } from "./components/VideoModal/VideoModal.js";
 import { initMobileMenu } from "./components/MobileMenu/MobileMenu.js";
 import { initializeAllHoverEffects } from "./utils/gifHoverEffect.js";
 import { scrollToSection } from "./utils/scrollTransition.js";
-
 import { initScrollHandler } from "./utils/scrollHandler.js";
 import "./styles/utils.css";
 
-domReady(() => {
-    document.body.style.visibility = "visible";
-    loadHeader();
+// Modular functions
+const getPageType = () => document.body.getAttribute("data-type");
 
-    const pageType = document.body.getAttribute("data-type");
+const handleHomePage = () => {
+    loadHomeSection("first");
 
-    // Gestion de l'ancre (ex: #reps, #about) après redirection
-    const hash = window.location.hash; // Récupérer l'ancre
-    let targetIndex = null;
+    // Fetch project data and initialize project sections
+    initProjectSections("data/featuredProjects.json", "home", () => {
+        const allSections = document.querySelectorAll("section");
+        handleHashScroll(allSections);
 
-    if (pageType === "home") {
-        // Charger la section home d'abord
-        loadHomeSection("first");
+        // Load dots indicator and scroll handler
+        loadDotsIndicator("home", () => {
+            initScrollHandler(allSections);
+            loadFooter(); // Load footer after everything is ready
+        });
+    });
 
-        initProjectSections("data/featuredProjects.json", "home", () => {
-            const allSections = document.querySelectorAll("section");
+    initializeAllHoverEffects();
+};
 
-            // Si une ancre est présente, la trouver et définir l'index cible
-            if (hash) {
-                const targetSection = document.querySelector(hash);
-                if (targetSection) {
-                    targetIndex =
-                        Array.from(allSections).indexOf(targetSection);
-                }
+const handleDirectorPage = () => {
+    const directorName = document.body.getAttribute("data-director");
+
+    if (!directorName) {
+        console.error("Director name not specified for director page");
+        return;
+    }
+
+    // Fetch and initialize director's project sections
+    fetch("/electra-website-v5/data/directorProjects.json")
+        .then((response) => response.json())
+        .then((data) => {
+            const projects = data[directorName];
+
+            if (!projects || !projects.length) {
+                console.error("No projects found for this director");
+                return;
             }
 
-            // Charger les dots indicators et initier le scroll handler
-            loadDotsIndicator("home", () => {
-                initScrollHandler(allSections);
+            initProjectSections(
+                "/electra-website-v5/data/directorProjects.json",
+                directorName,
+                () => {
+                    loadDirectorSection(directorName, () => {
+                        loadHomeSection("last");
 
-                // Si l'ancre existe, faire défiler jusqu'à la section correspondante
-                if (targetIndex !== null) {
-                    scrollToSection(targetIndex);
+                        const allSections =
+                            document.querySelectorAll("section");
+
+                        loadDotsIndicator("director", () => {
+                            initScrollHandler(allSections);
+                            loadFooter();
+                        });
+                    });
                 }
+            );
+        })
+        .catch((error) =>
+            console.error("Error loading director projects:", error)
+        );
+};
 
-                loadFooter(); // Charger le footer après
-            });
-        });
+// Handle anchor-based scrolling if there is a hash in the URL
+const handleHashScroll = (sections) => {
+    const hash = window.location.hash;
+    let targetIndex = null;
 
-        initializeAllHoverEffects();
-    } else if (pageType === "director") {
-        const directorName = document.body.getAttribute("data-director");
-
-        if (directorName) {
-            fetch("/electra-website-v5/data/directorProjects.json")
-                .then((response) => response.json())
-                .then((data) => {
-                    const projects = data[directorName];
-
-                    if (projects && projects.length) {
-                        initProjectSections(
-                            "/electra-website-v5/data/directorProjects.json",
-                            directorName,
-                            () => {
-                                loadDirectorSection(directorName, () => {
-                                    loadHomeSection("last");
-                                    const allSections =
-                                        document.querySelectorAll("section");
-
-                                    loadDotsIndicator("director", () => {
-                                        initScrollHandler(allSections);
-                                        loadFooter();
-                                    });
-                                });
-                            }
-                        );
-                    } else {
-                        console.error("No projects found for this director");
-                    }
-                })
-                .catch((error) =>
-                    console.error("Error loading director projects:", error)
-                );
-        } else {
-            console.error("Director name not specified for director page");
+    if (hash) {
+        const targetSection = document.querySelector(hash);
+        if (targetSection) {
+            targetIndex = Array.from(sections).indexOf(targetSection);
         }
+    }
+
+    if (targetIndex !== null) {
+        scrollToSection(targetIndex);
+    }
+};
+
+const initializePage = () => {
+    loadHeader();
+
+    const pageType = getPageType();
+
+    if (pageType === "home") {
+        handleHomePage();
+    } else if (pageType === "director") {
+        handleDirectorPage();
     }
 
     initializeVideoModal();
     initMobileMenu();
+};
+
+// Initialize once DOM is ready
+domReady(() => {
+    document.body.style.visibility = "visible";
+    initializePage();
 });

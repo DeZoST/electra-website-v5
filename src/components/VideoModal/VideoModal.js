@@ -10,10 +10,20 @@ export function initializeVideoModal() {
     document.body.appendChild(modal);
 
     const allContent = document.querySelector(".container");
+    if (!allContent) {
+        console.error("Main container not found.");
+        return;
+    }
+
     let muxPlayer;
 
     const openModal = (container) => {
         setScrollDisabled(true, "Modal Open");
+
+        if (!container || !container.dataset.playbackId) {
+            console.error("Invalid container or missing playback ID.");
+            return;
+        }
 
         if (muxPlayer) {
             muxPlayer.remove();
@@ -34,8 +44,6 @@ export function initializeVideoModal() {
             modal.querySelector(".modal-content").appendChild(muxPlayer);
 
             modal.style.display = "flex";
-            allContent.classList.add("blur-background");
-
             document.body.setAttribute("aria-hidden", "true");
             modal.setAttribute("aria-hidden", "false");
             muxPlayer.focus();
@@ -52,11 +60,13 @@ export function initializeVideoModal() {
         setScrollDisabled(false, "Modal Close");
 
         modal.style.display = "none";
-        allContent.classList.remove("blur-background");
-
         document.body.removeAttribute("aria-hidden");
         modal.setAttribute("aria-hidden", "true");
-        document.querySelector(".featured__project__video").focus();
+
+        const videoButton = document.querySelector(".featured__project__video");
+        if (videoButton) {
+            videoButton.focus();
+        }
 
         if (muxPlayer && typeof muxPlayer.pause === "function") {
             muxPlayer.pause();
