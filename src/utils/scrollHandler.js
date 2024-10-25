@@ -1,5 +1,4 @@
 import { scrollToSection } from "./scrollTransition.js";
-import { initTouchHandler } from "./touchHandler.js";
 
 let scrollDisabled = false;
 let currentSectionIndex = 0; // Global variable to track the current section index
@@ -130,12 +129,28 @@ function throttle(func, delay) {
 
 function handleScrollEvent(sections, indicators, scrollFeedback) {
     let isScrolling = false;
+    const deadZoneThreshold = 20;
+    let startY = 0;
 
     const onScroll = (event) => {
+        if (event.type === "touchstart") {
+            startY = event.touches[0].clientY;
+            return;
+        }
+
         if (isScrolling || scrollDisabled) return;
 
-        const delta = event.deltaY;
-        isScrolling = true;
+        let delta = 0;
+
+        if (event.type === "wheel") {
+            delta = event.deltaY;
+        } else if (event.type === "touchmove") {
+            const currentY = event.touches[0].clientY;
+            delta = startY - currentY;
+            startY = currentY;
+        }
+
+        if (Math.abs(delta) < deadZoneThreshold) return;
 
         if (delta > 0 && currentSectionIndex < sections.length - 1) {
             currentSectionIndex++;
@@ -154,19 +169,10 @@ function handleScrollEvent(sections, indicators, scrollFeedback) {
     };
 
     window.addEventListener("wheel", throttle(onScroll, 600));
-}
-
-function handleTouchEvents(sections, indicators, scrollFeedback) {
-    const sectionsArray = [...sections];
-
-    initTouchHandler(
-        sectionsArray,
-        (index) => {
-            updateActiveIndicator(indicators, index, scrollFeedback);
-            currentSectionIndex = index; // Update global index
-        },
-        scrollDisabled
-    );
+    window.addEventListener("touchstart", onScroll, { passive: true });
+    window.addEventListener("touchmove", throttle(onScroll, 600), {
+        passive: true,
+    });
 }
 
 function handleIntersectionObserver(sections, indicators, scrollFeedback) {
@@ -285,7 +291,6 @@ export const initScrollHandler = (sections) => {
 
     initializeIndicators(indicators, sections, scrollFeedback);
     handleScrollEvent(sections, indicators, scrollFeedback);
-    handleTouchEvents(sections, indicators, scrollFeedback);
     handleIntersectionObserver(sections, indicators, scrollFeedback);
     handleKeyboardNavigation(sections, indicators, scrollFeedback);
     handleHashScroll(sections, indicators, scrollFeedback);
