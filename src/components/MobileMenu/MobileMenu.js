@@ -22,17 +22,17 @@ export const initMobileMenu = () => {
         <ul class="mobile-menu__links">
             <li class="mobile-menu__link">
                 <a href="${
-                    pageType === "home" ? "#home" : "./index.html#home"
+                    pageType === "home" ? "#home" : "/index.html#home"
                 }">Directors</a>
             </li>
             <li class="mobile-menu__link">
                 <a href="${
-                    pageType === "home" ? "#about" : "./index.html#about"
+                    pageType === "home" ? "#about" : "/index.html#about"
                 }">About</a>
             </li>
             <li class="mobile-menu__link">
                 <a href="${
-                    pageType === "home" ? "#reps" : "./index.html#reps"
+                    pageType === "home" ? "#reps" : "/index.html#reps"
                 }">Contact</a>
             </li>
         </ul>
