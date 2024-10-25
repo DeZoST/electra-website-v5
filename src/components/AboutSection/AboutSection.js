@@ -4,7 +4,7 @@ export function loadDirectorSection(directorId, callback) {
         return;
     }
 
-    fetch("./data/directorsData.json")
+    fetch("/data/directorsData.json")
         .then((response) => {
             if (!response.ok) {
                 throw new Error(
