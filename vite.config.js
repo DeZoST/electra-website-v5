@@ -6,8 +6,8 @@ export default defineConfig({
     base: "/",
     build: {
         target: "esnext",
-        cssCodeSplit: true, // Déjà activé pour diviser le CSS
-        minify: "esbuild", // Utiliser esbuild pour la minification
+        cssCodeSplit: true,
+        minify: "esbuild",
         rollupOptions: {
             input: {
                 main: resolve(__dirname, "index.html"),
@@ -19,28 +19,27 @@ export default defineConfig({
             },
             output: {
                 manualChunks(id) {
-                    // Cela divise les bibliothèques tierces (comme 'vendor') et le code partagé
                     if (id.includes("node_modules")) {
                         return "vendor";
                     }
                 },
-                chunkFileNames: "assets/js/[name]-[hash].js", // Nommer les fichiers JS optimisés
-                entryFileNames: "assets/js/[name]-[hash].js", // Nommer les fichiers JS d'entrée
+                chunkFileNames: "assets/js/[name]-[hash].js",
+                entryFileNames: "assets/js/[name]-[hash].js",
                 assetFileNames: ({ name }) => {
                     if (/\.(css|js)$/.test(name ?? "")) {
-                        return "assets/[ext]/[name]-[hash].[ext]"; // Organiser les fichiers CSS et JS
+                        return "assets/[ext]/[name]-[hash].[ext]";
                     }
-                    return "assets/[name]-[hash].[ext]"; // Organiser d'autres fichiers
+                    return "assets/[name]-[hash].[ext]";
                 },
             },
         },
     },
     plugins: [
         viteCompression({
-            algorithm: "gzip", // Compresser en gzip
-            ext: ".gz", // Extension du fichier compressé
-            threshold: 10240, // Seuil de compression (10 KB)
-            deleteOriginFile: false, // Conserver les fichiers originaux non compressés
+            algorithm: "gzip",
+            ext: ".gz",
+            threshold: 10240,
+            deleteOriginFile: false,
         }),
     ],
 });

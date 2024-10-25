@@ -1,7 +1,6 @@
 import { setScrollDisabled } from "../../utils/scrollHandler.js";
 import { scrollToSection } from "../../utils/scrollTransition.js";
 
-// Get the page type from the body attribute
 const getPageType = () => document.body.getAttribute("data-type");
 
 export const initMobileMenu = () => {
@@ -12,7 +11,7 @@ export const initMobileMenu = () => {
         return;
     }
 
-    const pageType = getPageType(); // Get the current page type
+    const pageType = getPageType();
 
     const mobileMenu = document.createElement("div");
     mobileMenu.classList.add("mobile-menu");
