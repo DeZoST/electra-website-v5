@@ -37,9 +37,9 @@ export function initializeVideoModal() {
                 muxPlayer.setAttribute("stream-type", "on-demand");
                 muxPlayer.setAttribute("accent-color", "#ff4e00");
                 muxPlayer.setAttribute("disable-cookies", "true");
-                muxPlayer.setAttribute("autoplay", "");
-                muxPlayer.setAttribute("controls", "");
-                muxPlayer.disableAnalytics = true;
+                muxPlayer.setAttribute("autoplay", "true");
+                muxPlayer.setAttribute("controls", "true");
+                muxPlayer.setAttribute("disable-tracking", "true");
 
                 const playbackId = container.dataset.playbackId;
                 muxPlayer.setAttribute("playback-id", playbackId);

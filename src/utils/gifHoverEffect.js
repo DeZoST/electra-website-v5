@@ -68,7 +68,7 @@ function createMuxPlayer(playbackId) {
         muxPlayer.setAttribute("disable-cookies", "true");
         muxPlayer.setAttribute("playsinline", "true");
         muxPlayer.setAttribute("playback-id", playbackId);
-        muxPlayer.disableAnalytics = true;
+        muxPlayer.setAttribute("disable-tracking", "true");
 
         Object.assign(muxPlayer.style, {
             width: "100%",
