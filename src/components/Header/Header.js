@@ -8,7 +8,7 @@ export function loadHeader() {
 
     header.innerHTML = `
         <a href="./" class="logo">
-            <img src="./assets/images/Electra_Orange.webp" alt="Electra Logo" loading="lazy" />
+            <img src="/assets/images/Electra_Orange.webp" alt="Electra Logo" loading="lazy" />
         </a>
         <nav class="nav-menu" aria-label="Main Navigation Menu">
             <ul class="nav__links">
@@ -29,7 +29,7 @@ export function loadHeader() {
                 </li>
             </ul>
             <button id="menu-toggle" aria-label="Open main menu" class="menu-toggle">
-                <img src="./assets/images/Bolt_Star_Orange.webp" alt="Main Navigation Menu" loading="lazy" />
+                <img src="/assets/images/Bolt_Star_Orange.webp" alt="Main Navigation Menu" loading="lazy" />
             </button>
         </nav>
     `;
