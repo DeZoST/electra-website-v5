@@ -129,7 +129,7 @@ function throttle(func, delay) {
 
 function handleScrollEvent(sections, indicators, scrollFeedback) {
     let isScrolling = false;
-    const deadZoneThreshold = 20;
+    const deadZoneThreshold = 10;
     let startY = 0;
 
     const onScroll = (event) => {
