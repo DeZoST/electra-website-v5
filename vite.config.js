@@ -3,7 +3,7 @@ import viteCompression from "vite-plugin-compression";
 import { resolve } from "path";
 
 export default defineConfig({
-    base: "/electra-website-v5/",
+    base: "/",
     build: {
         target: "esnext",
         cssCodeSplit: true, // Déjà activé pour diviser le CSS
