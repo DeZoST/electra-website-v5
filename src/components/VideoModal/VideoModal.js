@@ -36,10 +36,10 @@ export function initializeVideoModal() {
                 muxPlayer.id = "muxPlayer";
                 muxPlayer.setAttribute("stream-type", "on-demand");
                 muxPlayer.setAttribute("accent-color", "#ff4e00");
-                muxPlayer.setAttribute("disable-cookies", "");
+                muxPlayer.setAttribute("disable-cookies", "true");
                 muxPlayer.setAttribute("autoplay", "");
                 muxPlayer.setAttribute("controls", "");
-                muxPlayer.setAttribute("no-analytics", "true");
+                muxPlayer.disableAnalytics = true;
 
                 const playbackId = container.dataset.playbackId;
                 muxPlayer.setAttribute("playback-id", playbackId);
