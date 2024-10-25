@@ -43,7 +43,7 @@ const handleDirectorPage = () => {
         return;
     }
 
-    fetch(".//data/directorProjects.json")
+    fetch("/data/directorProjects.json")
         .then((response) => response.json())
         .then((data) => {
             const projects = data[directorName];
@@ -54,7 +54,7 @@ const handleDirectorPage = () => {
             }
 
             initProjectSections(
-                ".//data/directorProjects.json",
+                "/data/directorProjects.json",
                 directorName,
                 () => {
                     loadDirectorSection(directorName, () => {
