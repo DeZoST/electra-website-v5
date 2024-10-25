@@ -4,18 +4,18 @@
             "id": "featured-work-01",
             "video": {
                 "playbackId": "XdvyCtxC01GgLyKOlSNmhitkhmZgk9L402S6DQPf7bonY",
-                "thumbnail": "/electra-website-v5/assets/images/Ford_Bronco_DUST_IS_GOLD_thumbnail.webp",
+                "thumbnail": "./assets/images/Ford_Bronco_DUST_IS_GOLD_thumbnail.webp",
                 "alt": "Ford Bronco DUST IS GOLD thumbnail",
                 "gif": "https://image.mux.com/XdvyCtxC01GgLyKOlSNmhitkhmZgk9L402S6DQPf7bonY/animated.webp?start=13&end=20&fps=15&width=640"
             },
             "details": {
-                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "icon": "./assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
                 "name": "Ze'ev Waismann",
                 "type": "Commercial",
                 "company": "Ford",
                 "title": "Dust is Gold",
-                "link": "/electra-website-v5/pages/zeev/index.html",
+                "link": "./pages/zeev/index.html",
                 "linkText": "More from Ze'ev"
             }
         },
@@ -23,18 +23,18 @@
             "id": "featured-work-02",
             "video": {
                 "playbackId": "w4Zj3eeapaSmgtdnrQ2deB375YJN8RuPFr01W01paVwXk",
-                "thumbnail": "/electra-website-v5/assets/images/km_VRT_LETS_RIDE_BOI_30sec_thumbnail.webp",
+                "thumbnail": "./assets/images/km_VRT_LETS_RIDE_BOI_30sec_thumbnail.webp",
                 "alt": "VRT LETS RIDE BOI 30sec thumbnail",
                 "gif": "https://image.mux.com/w4Zj3eeapaSmgtdnrQ2deB375YJN8RuPFr01W01paVwXk/animated.webp?start=27&end=30&fps=15&width=640"
             },
             "details": {
-                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "icon": "./assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
                 "name": "Kailee McGee",
                 "type": "Commercial",
                 "company": "VRT",
                 "title": "Let's Ride Boi",
-                "link": "/electra-website-v5/pages/kailee/index.html",
+                "link": "./pages/kailee/index.html",
                 "linkText": "More from Kailee"
             }
         },
@@ -42,18 +42,18 @@
             "id": "featured-work-03",
             "video": {
                 "playbackId": "mACdPBjc3T8h71wIIotEkstAQ5omVWgWCbbz101700drQ",
-                "thumbnail": "/electra-website-v5/assets/images/ld_3m_SEE_ME_60sec_thumbnail.webp",
+                "thumbnail": "./assets/images/ld_3m_SEE_ME_60sec_thumbnail.webp",
                 "alt": "3M SEE ME 60sec thumbnail",
                 "gif": "https://image.mux.com/mACdPBjc3T8h71wIIotEkstAQ5omVWgWCbbz101700drQ/animated.webp?start=45&end=50&fps=15&width=640"
             },
             "details": {
-                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "icon": "./assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
                 "name": "Lorenzo De Guia",
                 "type": "Commercial",
                 "company": "3M",
                 "title": "See Me",
-                "link": "/electra-website-v5/pages/lorenzo/index.html",
+                "link": "./pages/lorenzo/index.html",
                 "linkText": "More from Lorenzo"
             }
         },
@@ -61,18 +61,18 @@
             "id": "featured-work-04",
             "video": {
                 "playbackId": "i01Ulqp4lofAUraM9fT6ApiuR9TTxzcVoqx27heCVZ1k",
-                "thumbnail": "/electra-website-v5/assets/images/ag_Ford_NFL_SUPER_FAN_90sec_thumbnail.webp",
+                "thumbnail": "./assets/images/ag_Ford_NFL_SUPER_FAN_90sec_thumbnail.webp",
                 "alt": "Ford NFL SUPER FAN 90sec thumbnail",
                 "gif": "https://image.mux.com/XdvyCtxC01GgLyKOlSNmhitkhmZgk9L402S6DQPf7bonY/animated.webp?start=13&end=20&fps=15&width=640"
             },
             "details": {
-                "icon": "/electra-website-v5/assets/images/Solo_Star_Orange.webp",
+                "icon": "./assets/images/Solo_Star_Orange.webp",
                 "iconAlt": "Solo Star Orange",
                 "name": "Anthony Garth",
                 "type": "Commercial",
                 "company": "Ford | NFL",
                 "title": "Superfan",
-                "link": "/electra-website-v5/pages/anthony/index.html",
+                "link": "./pages/anthony/index.html",
                 "linkText": "More from Anthony"
             }
         }

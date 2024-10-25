@@ -4,7 +4,7 @@ export function loadDirectorSection(directorId, callback) {
         return;
     }
 
-    fetch("/electra-website-v5/data/directorsData.json")
+    fetch("./data/directorsData.json")
         .then((response) => {
             if (!response.ok) {
                 throw new Error(
@@ -50,7 +50,7 @@ function createDirectorSection(directorData) {
             <h4 class="director__role">DIRECTOR</h4>
             <h1 class="director__name">${directorData.name}</h1>
             <p class="director__description">${directorData.description}</p>
-            <a href="/electra-website-v5/index.html#reps" class="director__contact">Contact Us</a>
+            <a href="./index.html#reps" class="director__contact">Contact Us</a>
         </div>
         <div class="director__photo">
             <img src="${directorData.photo}" alt="${directorData.name}" />

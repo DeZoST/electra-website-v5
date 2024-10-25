@@ -2,10 +2,10 @@ import { scrollToSection } from "./scrollTransition.js";
 import { initTouchHandler } from "./touchHandler.js";
 
 let scrollDisabled = false;
+let currentSectionIndex = 0; // Global variable to track the current section index
 
-export const setScrollDisabled = (disabled, source) => {
+export const setScrollDisabled = (disabled) => {
     scrollDisabled = disabled;
-    console.log(`Scroll disabled: ${disabled} - Source: ${source}`);
 };
 
 function updateScrollFeedback(sectionName, scrollFeedback) {
@@ -17,7 +17,6 @@ function updateScrollFeedback(sectionName, scrollFeedback) {
 function updateActiveIndicator(
     indicators,
     currentSectionIndex,
-    sections,
     scrollFeedback
 ) {
     if (!indicators) return;
@@ -28,6 +27,7 @@ function updateActiveIndicator(
         console.error("Invalid parameters passed to updateActiveIndicator.");
         return;
     }
+
     indicators.forEach((indicator) => {
         indicator.classList.remove("active");
         indicator.setAttribute("aria-current", "false");
@@ -48,6 +48,24 @@ function updateActiveIndicator(
     }
 }
 
+const handleHashScroll = (sections, indicators, scrollFeedback) => {
+    const hash = window.location.hash;
+    let targetIndex = null;
+
+    if (hash) {
+        const targetSection = document.querySelector(hash);
+        if (targetSection) {
+            targetIndex = Array.from(sections).indexOf(targetSection);
+        }
+    }
+
+    if (targetIndex !== null && targetIndex !== -1) {
+        scrollToSection(targetIndex);
+        updateActiveIndicator(indicators, targetIndex, scrollFeedback);
+        currentSectionIndex = targetIndex; // Update global index
+    }
+};
+
 function handleIndicatorNavigation(
     indicator,
     sections,
@@ -61,12 +79,8 @@ function handleIndicatorNavigation(
         const targetIndex = Array.from(sections).indexOf(targetSection);
         if (targetIndex !== -1) {
             scrollToSection(targetIndex);
-            updateActiveIndicator(
-                indicators,
-                targetIndex,
-                sections,
-                scrollFeedback
-            );
+            updateActiveIndicator(indicators, targetIndex, scrollFeedback);
+            currentSectionIndex = targetIndex; // Update global index
             indicator.focus();
         }
     }
@@ -115,7 +129,6 @@ function throttle(func, delay) {
 }
 
 function handleScrollEvent(sections, indicators, scrollFeedback) {
-    let currentSectionIndex = 0;
     let isScrolling = false;
 
     const onScroll = (event) => {
@@ -131,12 +144,7 @@ function handleScrollEvent(sections, indicators, scrollFeedback) {
         }
 
         scrollToSection(currentSectionIndex);
-        updateActiveIndicator(
-            indicators,
-            currentSectionIndex,
-            sections,
-            scrollFeedback
-        );
+        updateActiveIndicator(indicators, currentSectionIndex, scrollFeedback);
 
         window.requestAnimationFrame(() => {
             setTimeout(() => {
@@ -154,11 +162,8 @@ function handleTouchEvents(sections, indicators, scrollFeedback) {
     initTouchHandler(
         sectionsArray,
         (index) => {
-            console.log(
-                "handleTouchEvents -> callback triggered for index:",
-                index
-            );
-            updateActiveIndicator(indicators, index, sections, scrollFeedback);
+            updateActiveIndicator(indicators, index, scrollFeedback);
+            currentSectionIndex = index; // Update global index
         },
         scrollDisabled
     );
@@ -172,12 +177,8 @@ function handleIntersectionObserver(sections, indicators, scrollFeedback) {
                 const index = Array.from(sections).indexOf(section);
 
                 if (entry.isIntersecting && index !== -1) {
-                    updateActiveIndicator(
-                        indicators,
-                        index,
-                        sections,
-                        scrollFeedback
-                    );
+                    updateActiveIndicator(indicators, index, scrollFeedback);
+                    currentSectionIndex = index; // Update global index
                     section.classList.add("section-visible");
                 } else {
                     section.classList.remove("section-visible");
@@ -191,7 +192,6 @@ function handleIntersectionObserver(sections, indicators, scrollFeedback) {
 }
 
 function handleKeyboardNavigation(sections, indicators, scrollFeedback) {
-    let currentSectionIndex = 0;
     document.addEventListener("keydown", (event) => {
         if (
             event.key === "ArrowDown" &&
@@ -202,7 +202,6 @@ function handleKeyboardNavigation(sections, indicators, scrollFeedback) {
             updateActiveIndicator(
                 indicators,
                 currentSectionIndex,
-                sections,
                 scrollFeedback
             );
         } else if (event.key === "ArrowUp" && currentSectionIndex > 0) {
@@ -211,12 +210,69 @@ function handleKeyboardNavigation(sections, indicators, scrollFeedback) {
             updateActiveIndicator(
                 indicators,
                 currentSectionIndex,
-                sections,
                 scrollFeedback
             );
         }
     });
 }
+
+const handleAnchorNavigation = (sections, scrollFeedback, indicators) => {
+    const allAnchors = document.querySelectorAll(
+        'a[href^="#"], a[href*=".html#"]'
+    );
+
+    allAnchors.forEach((anchor) => {
+        anchor.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const href = anchor.getAttribute("href");
+
+            if (href.startsWith("#")) {
+                const targetSection = document.querySelector(href);
+                if (targetSection) {
+                    const targetIndex =
+                        Array.from(sections).indexOf(targetSection);
+                    if (targetIndex !== -1) {
+                        scrollToSection(targetIndex);
+                        updateActiveIndicator(
+                            indicators,
+                            targetIndex,
+                            scrollFeedback
+                        );
+                        currentSectionIndex = targetIndex; // Update global index
+                    }
+                }
+            }
+
+            if (href.includes(".html#")) {
+                const [targetPage, targetHash] = href.split("#");
+                sessionStorage.setItem("targetHash", targetHash);
+                window.location.href = targetPage;
+            }
+        });
+    });
+
+    const storedHash = sessionStorage.getItem("targetHash");
+    if (storedHash) {
+        window.addEventListener("load", () => {
+            const newTargetSection = document.querySelector(`#${storedHash}`);
+            if (newTargetSection) {
+                const targetIndex =
+                    Array.from(sections).indexOf(newTargetSection);
+                if (targetIndex !== -1) {
+                    scrollToSection(targetIndex);
+                    updateActiveIndicator(
+                        indicators,
+                        targetIndex,
+                        scrollFeedback
+                    );
+                    currentSectionIndex = targetIndex; // Update global index
+                    sessionStorage.removeItem("targetHash");
+                }
+            }
+        });
+    }
+};
 
 export const initScrollHandler = (sections) => {
     if (!sections || !sections.length) {
@@ -232,4 +288,10 @@ export const initScrollHandler = (sections) => {
     handleTouchEvents(sections, indicators, scrollFeedback);
     handleIntersectionObserver(sections, indicators, scrollFeedback);
     handleKeyboardNavigation(sections, indicators, scrollFeedback);
+    handleHashScroll(sections, indicators, scrollFeedback);
+    handleAnchorNavigation(sections, scrollFeedback, indicators);
+
+    window.addEventListener("hashchange", () => {
+        handleHashScroll(sections, indicators, scrollFeedback);
+    });
 };

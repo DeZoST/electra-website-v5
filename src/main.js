@@ -14,25 +14,21 @@ import { initProjectSections } from "./components/FeaturedWork/FeaturedWork.js";
 import { initializeVideoModal } from "./components/VideoModal/VideoModal.js";
 import { initMobileMenu } from "./components/MobileMenu/MobileMenu.js";
 import { initializeAllHoverEffects } from "./utils/gifHoverEffect.js";
-import { scrollToSection } from "./utils/scrollTransition.js";
 import { initScrollHandler } from "./utils/scrollHandler.js";
 import "./styles/utils.css";
 
-// Modular functions
 const getPageType = () => document.body.getAttribute("data-type");
 
 const handleHomePage = () => {
     loadHomeSection("first");
 
-    // Fetch project data and initialize project sections
     initProjectSections("data/featuredProjects.json", "home", () => {
         const allSections = document.querySelectorAll("section");
-        handleHashScroll(allSections);
 
-        // Load dots indicator and scroll handler
         loadDotsIndicator("home", () => {
             initScrollHandler(allSections);
-            loadFooter(); // Load footer after everything is ready
+            loadFooter();
+            initializeVideoModal();
         });
     });
 
@@ -47,8 +43,7 @@ const handleDirectorPage = () => {
         return;
     }
 
-    // Fetch and initialize director's project sections
-    fetch("/electra-website-v5/data/directorProjects.json")
+    fetch(".//data/directorProjects.json")
         .then((response) => response.json())
         .then((data) => {
             const projects = data[directorName];
@@ -59,7 +54,7 @@ const handleDirectorPage = () => {
             }
 
             initProjectSections(
-                "/electra-website-v5/data/directorProjects.json",
+                ".//data/directorProjects.json",
                 directorName,
                 () => {
                     loadDirectorSection(directorName, () => {
@@ -71,6 +66,7 @@ const handleDirectorPage = () => {
                         loadDotsIndicator("director", () => {
                             initScrollHandler(allSections);
                             loadFooter();
+                            initializeVideoModal();
                         });
                     });
                 }
@@ -79,23 +75,6 @@ const handleDirectorPage = () => {
         .catch((error) =>
             console.error("Error loading director projects:", error)
         );
-};
-
-// Handle anchor-based scrolling if there is a hash in the URL
-const handleHashScroll = (sections) => {
-    const hash = window.location.hash;
-    let targetIndex = null;
-
-    if (hash) {
-        const targetSection = document.querySelector(hash);
-        if (targetSection) {
-            targetIndex = Array.from(sections).indexOf(targetSection);
-        }
-    }
-
-    if (targetIndex !== null) {
-        scrollToSection(targetIndex);
-    }
 };
 
 const initializePage = () => {
@@ -109,11 +88,9 @@ const initializePage = () => {
         handleDirectorPage();
     }
 
-    initializeVideoModal();
     initMobileMenu();
 };
 
-// Initialize once DOM is ready
 domReady(() => {
     document.body.style.visibility = "visible";
     initializePage();

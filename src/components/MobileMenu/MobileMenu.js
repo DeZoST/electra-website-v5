@@ -1,6 +1,9 @@
 import { setScrollDisabled } from "../../utils/scrollHandler.js";
 import { scrollToSection } from "../../utils/scrollTransition.js";
 
+// Get the page type from the body attribute
+const getPageType = () => document.body.getAttribute("data-type");
+
 export const initMobileMenu = () => {
     const menuToggle = document.getElementById("menu-toggle");
 
@@ -9,15 +12,29 @@ export const initMobileMenu = () => {
         return;
     }
 
+    const pageType = getPageType(); // Get the current page type
+
     const mobileMenu = document.createElement("div");
     mobileMenu.classList.add("mobile-menu");
     mobileMenu.style.display = "none";
     mobileMenu.innerHTML = `
         <button class="mobile-menu__close"></button>
         <ul class="mobile-menu__links">
-            <li class="mobile-menu__link"><a href="#home">Directors</a></li>
-            <li class="mobile-menu__link"><a href="#about">About</a></li>
-            <li class="mobile-menu__link"><a href="#reps">Contact</a></li>
+            <li class="mobile-menu__link">
+                <a href="${
+                    pageType === "home" ? "#home" : "./index.html#home"
+                }">Directors</a>
+            </li>
+            <li class="mobile-menu__link">
+                <a href="${
+                    pageType === "home" ? "#about" : "./index.html#about"
+                }">About</a>
+            </li>
+            <li class="mobile-menu__link">
+                <a href="${
+                    pageType === "home" ? "#reps" : "./index.html#reps"
+                }">Contact</a>
+            </li>
         </ul>
     `;
     document.body.appendChild(mobileMenu);
@@ -25,13 +42,13 @@ export const initMobileMenu = () => {
     const closeMenu = () => {
         mobileMenu.classList.remove("open");
         mobileMenu.style.display = "none";
-        setScrollDisabled(false, "Mobile Menu Close");
+        setScrollDisabled(false);
     };
 
     const toggleMenu = (event) => {
         event.stopPropagation();
         const isOpen = mobileMenu.classList.toggle("open");
-        setScrollDisabled(isOpen, "Mobile Menu Toggle");
+        setScrollDisabled(isOpen);
 
         if (isOpen) {
             mobileMenu.style.display = "flex";
@@ -69,7 +86,11 @@ export const initMobileMenu = () => {
         link.addEventListener("click", (event) => {
             event.preventDefault();
 
-            const target = link.getAttribute("href");
+            const fullHref = link.getAttribute("href");
+            const hashIndex = fullHref.indexOf("#");
+
+            const target = fullHref.substring(hashIndex);
+
             const targetSection = document.querySelector(target);
 
             if (targetSection) {
