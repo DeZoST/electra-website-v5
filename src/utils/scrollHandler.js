@@ -129,27 +129,11 @@ function throttle(func, delay) {
 
 function handleScrollEvent(sections, indicators, scrollFeedback) {
     let isScrolling = false;
-    const deadZoneThreshold = 10;
+    const deadZoneThreshold = 20;
+    const swipeThreshold = 50;
     let startY = 0;
 
-    const onScroll = (event) => {
-        if (event.type === "touchstart") {
-            startY = event.touches[0].clientY;
-            return;
-        }
-
-        if (isScrolling || scrollDisabled) return;
-
-        let delta = 0;
-
-        if (event.type === "wheel") {
-            delta = event.deltaY;
-        } else if (event.type === "touchmove") {
-            const currentY = event.touches[0].clientY;
-            delta = startY - currentY;
-            startY = currentY;
-        }
-
+    const performScroll = (delta) => {
         if (Math.abs(delta) < deadZoneThreshold) return;
 
         if (delta > 0 && currentSectionIndex < sections.length - 1) {
@@ -161,6 +145,7 @@ function handleScrollEvent(sections, indicators, scrollFeedback) {
         scrollToSection(currentSectionIndex);
         updateActiveIndicator(indicators, currentSectionIndex, scrollFeedback);
 
+        isScrolling = true;
         window.requestAnimationFrame(() => {
             setTimeout(() => {
                 isScrolling = false;
@@ -168,11 +153,40 @@ function handleScrollEvent(sections, indicators, scrollFeedback) {
         });
     };
 
+    const onScroll = (event) => {
+        if (isScrolling || scrollDisabled) return;
+        const delta = event.deltaY;
+        performScroll(delta);
+    };
+
+    const handleTouchStart = (event) => {
+        if (scrollDisabled) return;
+        startY = event.touches[0].clientY;
+    };
+
+    const handleTouchMove = (event) => {
+        if (isScrolling || scrollDisabled) return;
+        const currentY = event.touches[0].clientY;
+        const deltaY = startY - currentY;
+        startY = currentY;
+        performScroll(deltaY);
+    };
+
+    const handleTouchEnd = (event) => {
+        if (scrollDisabled || isScrolling) return;
+        const endY = event.changedTouches[0].clientY;
+        const deltaY = startY - endY;
+        if (Math.abs(deltaY) >= swipeThreshold) {
+            performScroll(deltaY);
+        }
+    };
+
     window.addEventListener("wheel", throttle(onScroll, 600));
-    window.addEventListener("touchstart", onScroll, { passive: true });
-    window.addEventListener("touchmove", throttle(onScroll, 600), {
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", throttle(handleTouchMove, 600), {
         passive: true,
     });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
 }
 
 function handleIntersectionObserver(sections, indicators, scrollFeedback) {
